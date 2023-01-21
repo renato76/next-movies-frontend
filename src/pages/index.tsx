@@ -1,3 +1,4 @@
+import Header from "@/components/Header"
 import { useQuery } from "react-query"
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
 
   return (
     <>
+    <Header />
       <div>
         <h1 className="flex text-2xl justify-center font-bold text-purple-800">Next Movies</h1>
       </div>
