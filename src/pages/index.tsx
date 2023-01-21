@@ -1,6 +1,15 @@
+import { useQuery } from "react-query"
 
+const Home = () => {
+  const fetchMovies = async () => {
+    const res = await fetch('http://localhost:1337/api/movies?populate=*')
+    return res.json()
+  }
 
-export default function Home() {
+  const {data, error, isLoading} = useQuery('allMovies', fetchMovies)
+
+  console.log(data)
+
   return (
     <>
       <div>
@@ -9,3 +18,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home
