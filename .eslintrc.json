@@ -1,3 +1,62 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["testing-library", "jest-dom"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
+  ],
+  "rules": {
+    "brace-style": "error",
+    "camelcase": [
+      "error",
+      {
+        "properties": "never"
+      }
+    ],
+    "func-call-spacing": ["error", "never"],
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true
+      }
+    ],
+    "space-infix-ops": [
+      "error",
+      {
+        "int32Hint": false
+      }
+    ],
+    "object-curly-spacing": ["error", "always"],
+    "eqeqeq": "warn",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false
+      }
+    ],
+    "no-console": "off",
+    "no-fallthrough": "warn",
+    "prefer-const": "error",
+    "semi": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    "react/prop-types": [0],
+    "react/react-in-jsx-scope": "off"
+  }
 }

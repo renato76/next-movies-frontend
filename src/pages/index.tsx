@@ -1,21 +1,23 @@
 import Header from "@/components/Header"
 import { useQuery } from "react-query"
+import { fetchAllMovies } from "../fetchers/fetchMovies"
 
 const Home = () => {
-  const fetchMovies = async () => {
-    const res = await fetch('http://localhost:1337/api/movies?populate=*')
-    return res.json()
-  }
+  const {
+    data: allMovies,
+    error,
+    isLoading,
+  } = useQuery("allMovies", fetchAllMovies)
 
-  const {data, error, isLoading} = useQuery('allMovies', fetchMovies)
-
-  console.log(data)
+  console.log(allMovies)
 
   return (
     <>
-    <Header />
+      <Header />
       <div>
-        <h1 className="flex text-2xl justify-center font-bold text-purple-800">Next Movies</h1>
+        <h1 className="flex text-2xl justify-center font-bold text-purple-800">
+          Next Movies
+        </h1>
       </div>
     </>
   )
