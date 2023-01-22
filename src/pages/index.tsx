@@ -18,10 +18,13 @@ const Home = () => {
       <Header />
       <a className="flex cursor-pointer">
         {allMovies?.map((movie) => (
-          <Link key={movie.id} href={`${process.env.MOVIES_ENDPOINT}/movies/${movie.id}`}>
+          <Link
+            key={movie.id}
+            href={`${process.env.MOVIES_ENDPOINT}/movies/${movie.id}`}
+          >
             <img
               src={movie.attributes?.imageUrl}
-              alt="Picture of the author"
+              alt={movie.attributes.title}
               width={180}
               height={300}
             />
