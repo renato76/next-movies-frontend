@@ -6,7 +6,7 @@ function fetchMovies(req: NextApiRequest, res: NextApiResponse) {
     req,
     res,
     "GET",
-    `${process.env.MOVIES_ENDPOINT}/movies`
+    `${process.env.MOVIES_ENDPOINT}/movies?populate=*`
   )
 }
 
@@ -14,7 +14,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-
   return new Promise((resolve) => {
     fetchMovies(req, res)
       .then((response) => {

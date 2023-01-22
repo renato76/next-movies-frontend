@@ -1,6 +1,8 @@
 import Header from "@/components/Header"
 import { useQuery } from "react-query"
 import { fetchAllMovies } from "../fetchers/fetchMovies"
+import Image from "next/image"
+import Link from "next/link"
 
 const Home = () => {
   const {
@@ -14,11 +16,18 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div>
-        <h1 className="flex text-2xl justify-center font-bold text-purple-800">
-          Next Movies
-        </h1>
-      </div>
+      <a className="flex cursor-pointer">
+        {allMovies?.map((movie) => (
+          <Link key={movie.id} href={`${process.env.MOVIES_ENDPOINT}/movies/${movie.id}`}>
+            <img
+              src={movie.attributes?.imageUrl}
+              alt="Picture of the author"
+              width={180}
+              height={300}
+            />
+          </Link>
+        ))}
+      </a>
     </>
   )
 }
