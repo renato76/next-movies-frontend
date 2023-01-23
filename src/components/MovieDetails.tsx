@@ -14,7 +14,7 @@ const MovieDetails = ({ movie }: MovieApiResopnse) => {
             <img
               src={movie.data.attributes.imageUrl}
               alt={movie.data.attributes.title}
-              className="w-96"
+              className="w-96 rounded-md"
             />
           </div>
         </div>
