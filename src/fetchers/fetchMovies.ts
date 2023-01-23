@@ -19,7 +19,7 @@ export interface MovieApiResopnse {
       id: string
       attributes: {
         title: string
-        desctription: string
+        description: string
         starring: string
         duration: string
         ageRating: string

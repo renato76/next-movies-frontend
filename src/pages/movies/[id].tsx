@@ -5,9 +5,9 @@ import MovieDetails from "@/components/MovieDetails"
 const Movie = ({ movie }: MovieApiResopnse) => {
   console.log("movie >>>", movie)
   return (
-    <>
-      <MovieDetails />
-    </>
+    <div className="">
+      <MovieDetails movie={movie} />
+    </div>
   )
 }
 
