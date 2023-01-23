@@ -1,9 +1,11 @@
-import React, {useState, FC, useEffect} from 'react'
+import React, { useState, FC, useEffect } from "react"
 
 const Header: FC = () => {
   return (
-    <header className="sticky bg-[#32165e] top-0 z-[1000] flex items-center px-10 md:px-12 h-[72px]">
-      <h1 className="text-white">Header</h1>
+    <header className="sticky text-white bg-[#32165e] top-0 z-[1000] flex justify-end items-center px-10 md:px-12 h-[72px]">
+      <div className="cursor-pointer">
+        <button type="submit">Login</button>
+      </div>
     </header>
   )
 }
