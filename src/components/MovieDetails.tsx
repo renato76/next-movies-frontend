@@ -28,7 +28,7 @@ const MovieDetails = ({ movie }: MovieApiResopnse) => {
             </div>
           </div>
           <div className="text-white flex text-center py-5 justify-center md:justify-start">
-            {movie.data.attributes.genres.map((genre) => (
+            {movie?.data?.attributes?.genres?.map((genre) => (
               <div className=" bg-pink-600 mr-2 text-center text-sm rounded-lg">
                 <p className="px-4 py-1">{genre}</p>
               </div>

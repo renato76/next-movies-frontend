@@ -18,7 +18,7 @@ const HomePage = () => {
   console.log(allMovies)
 
   const actionMovies = allMovies?.filter((movie) =>
-    movie.attributes.genres.find((genre) => genre.includes("Action "))
+    movie?.attributes?.genres?.find((genre) => genre.includes("Action"))
   )
   console.log("action", actionMovies)
 
