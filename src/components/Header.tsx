@@ -1,4 +1,4 @@
-import React, { useState, FC, useEffect } from "react"
+import { FC } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 const Header: FC = () => {
@@ -6,16 +6,16 @@ const Header: FC = () => {
   console.log("session >>>", session)
   return (
     <header className="sticky text-white bg-[#041791] top-0 z-[1000] flex justify-center sm:justify-end items-center px-4 md:px-6 h-[72px]">
-      <div className="cursor-pointer">
+      <div>
         {session && (
           <div className="flex">
             <div className="space-x-2">
-              <button className=" px-4 md:px-12 py-2 bg-[#334ae3] rounded-lg">
+              <button className="px-4 md:px-12 py-2 bg-[#334ae3] rounded-lg cursor-pointer">
                 Create Movie
               </button>
               <button
                 onClick={signOut}
-                className="px-4 md:px-12 py-2 bg-[#334ae3] rounded-lg"
+                className="px-4 md:px-12 py-2 bg-[#334ae3] rounded-lg cursor-pointer"
               >
                 Sign out
               </button>
@@ -25,7 +25,7 @@ const Header: FC = () => {
         {!session && (
           <button
             onClick={signIn}
-            className="px-12 py-2 bg-[#334ae3] rounded-lg"
+            className="px-12 py-2 bg-[#334ae3] rounded-lg cursor-pointer"
           >
             Sign in
           </button>

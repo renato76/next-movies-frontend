@@ -1,4 +1,3 @@
-import React from "react"
 import { render, screen, waitFor } from "@testing-library/react"
 import HomePage from "../pages/index"
 import { QueryClient, QueryClientProvider } from "react-query"

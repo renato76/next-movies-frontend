@@ -1,9 +1,9 @@
+import Head from "next/head"
 import Header from "../components/Header"
 import { useQuery } from "react-query"
 import { fetchAllMovies } from "../fetchers/fetchMovies"
 import Link from "next/link"
 import { FadeLoader } from "react-spinners"
-import React from "react"
 
 const HomePage = () => {
   const {
@@ -22,6 +22,9 @@ const HomePage = () => {
 
   return (
     <>
+      <Head>
+        <title>Next Movies</title>
+      </Head>
       <Header />
       <div className="bg-[#041791] flex justify-center">
         <h1 className="text-4xl text-bold text-white">Next Movies</h1>
@@ -34,7 +37,7 @@ const HomePage = () => {
       ) : (
         <div className="bg-[#041791]">
           <div className="flex flex-col py-5 overflow-x-scroll">
-            <h2 className="text-white ml-5">ALL MOVIES</h2>
+            <h2 className="text-white ml-5 mb-2">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll px-3">
               {allMovies?.map((movie) => (
                 <Link
@@ -54,7 +57,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="flex flex-col py-5">
-            <h2 className="text-white ml-5">ACTION MOVIES</h2>
+            <h2 className="text-white ml-5 mb-2">ACTION MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll px-3">
               {actionMovies?.map((movie) => (
                 <Link
