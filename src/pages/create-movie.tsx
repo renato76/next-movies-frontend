@@ -1,5 +1,6 @@
 import React from "react"
 import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useRouter } from "next/router"
 import { createMovie } from "@/mutations/createMovie"
 import { Formik, Form, Field } from "formik"
 import { TextField } from "@/components/TextField"
@@ -30,6 +31,8 @@ const CreateMovie = () => {
     imageUrl: "",
   }
 
+  const router = useRouter()
+
   const queryClient = useQueryClient()
 
   const { mutateAsync: createMovieMutate, isLoading: isSubmittingCreate } =
@@ -42,17 +45,18 @@ const CreateMovie = () => {
 
   const handleSubmit = async (values: any) => {
     await createMovieMutate(values)
+    router.push("./")
   }
   return (
-    <div className="text-center pt-12 pb-20 h-screen">
-      <h1 className="">Create A Movie</h1>
+    <div className="text-center pt-10 pb-20 h-screen bg-[#323235]">
+      <h1 className="text-white text-4xl text-bold">Create A Movie</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={async (values) => {
           handleSubmit(values)
         }}
       >
-        <div className="flex justify-center mt-6 w-1/2 m-auto bg-white text-start px-5 py-6">
+        <div className="flex justify-center mt-6 w-1/2 m-auto text-start rounded-lg px-5 py-6 bg-[#f0f0f0]">
           <Form>
             <div className="flex flex-col md:flex-row md:space-x-5">
               <div>
