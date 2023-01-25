@@ -1,10 +1,10 @@
 import { useRouter } from "next/router"
-import { MovieApiResopnse } from "@/fetchers/fetchMovies"
+import { MovieApiResopnse } from "../fetchers/fetchMovies"
 
 const MovieDetails = ({ movie }: MovieApiResopnse) => {
   const router = useRouter()
   return (
-    <div className="bg-[#1d183c] w-full md:py-10 md:pl-10 min-h-screen ">
+    <div className="bg-[#1d183c] w-full md:py-10 md:pl-10 min-h-screen">
       <button type="button" onClick={() => router.back()}>
         <p className="text-white md:pl-10">Back to home</p>
       </button>
@@ -19,7 +19,7 @@ const MovieDetails = ({ movie }: MovieApiResopnse) => {
           </div>
         </div>
         <div className="flex flex-col md:pt-20 md:pl-5 md:w-2/3">
-          <div className="flex text-white text-lg md:text-3xl lg:text-5xl justify-center md:justify-start">
+          <div className="flex text-white text-lg md:text-3xl lg:text-5xl justify-center md:justiPfy-start">
             <div>
               <h1>{movie.data.attributes.title}&nbsp;</h1>
             </div>
