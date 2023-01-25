@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import moviesApiService from "@/services/moviesApiService"
+import moviesApiService from "../../../services/moviesApiService"
 
 function fetchMovies(req: NextApiRequest, res: NextApiResponse) {
   return moviesApiService(

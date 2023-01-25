@@ -3,6 +3,7 @@ import { useQuery } from "react-query"
 import { fetchAllMovies } from "../fetchers/fetchMovies"
 import Link from "next/link"
 import { FadeLoader } from "react-spinners"
+import React from "react"
 
 const HomePage = () => {
   const {
@@ -15,12 +16,9 @@ const HomePage = () => {
     staleTime: Infinity,
   })
 
-  console.log(allMovies)
-
   const actionMovies = allMovies?.filter((movie) =>
     movie?.attributes?.genres?.find((genre) => genre.includes("Action"))
   )
-  console.log("action", actionMovies)
 
   return (
     <>
