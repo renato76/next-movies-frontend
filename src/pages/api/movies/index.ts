@@ -42,7 +42,6 @@ export default async function handler(
 ): Promise<void> {
   if (req.method === "POST") {
     return new Promise((resolve) => {
-      console.log("reached here")
       createMovie(req, res)
         .then((response) => {
           res.status(200).end(JSON.stringify(response))

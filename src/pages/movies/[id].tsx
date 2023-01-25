@@ -1,9 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from "next"
-import { MovieApiResopnse } from "../../fetchers/fetchMovies"
+import { MovieApiResponse } from "../../fetchers/fetchMovies"
 import MovieDetails from "@/components/MovieDetails"
 
-const Movie = ({ movie }: MovieApiResopnse) => {
-  console.log("movie >>>", movie)
+const Movie = ({ movie }: MovieApiResponse) => {
   return (
     <div className="">
       <MovieDetails movie={movie} />
@@ -13,7 +12,7 @@ const Movie = ({ movie }: MovieApiResopnse) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await fetch(`${process.env.MOVIES_ENDPOINT}/movies/${params?.id}`)
-  const movie: MovieApiResopnse = await res.json()
+  const movie: MovieApiResponse = await res.json()
 
   return {
     props: {
