@@ -2,7 +2,7 @@ export interface AllMoviesApiResponse {
   id: string
   attributes: {
     title: string
-    desctription: string
+    description: string
     starring: string
     duration: string
     ageRating: string
@@ -13,7 +13,7 @@ export interface AllMoviesApiResponse {
   }
 }
 
-export interface MovieApiResopnse {
+export interface MovieApiResponse {
   movie: {
     data: {
       id: string
