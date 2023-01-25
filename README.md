@@ -25,7 +25,7 @@ I also added social login with GitHub and Google using Next Auth.
 
 # **Next Steps**
 
-The plan is to have full CRUD functionality, so will be adding a Create / Update a movie plus Delete a movie which will only be available to Authrized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
+The plan is to have full CRUD functionality, so will be adding a Create / Update a movie plus Delete a movie which will only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
 
 # **Screenshots**
 
