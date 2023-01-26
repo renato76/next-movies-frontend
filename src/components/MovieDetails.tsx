@@ -8,7 +8,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
       <button type="button" onClick={() => router.back()}>
         <p className="text-white md:pl-10">Back to home</p>
       </button>
-      <div className="flex flex-col  items-center md:flex-row md:items-start md:w-full">
+      <div className="flex flex-col items-center md:flex-row md:items-start md:w-full">
         <div className="md:w-1/3">
           <div className="flex justify-center my-10 mx-3 object-contain h-auto">
             <img
@@ -19,7 +19,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           </div>
         </div>
         <div className="flex flex-col md:pt-20 md:pl-5 md:w-2/3">
-          <div className="flex text-white text-lg md:text-3xl lg:text-5xl justify-center md:justiPfy-start">
+          <div className="flex text-white text-lg md:text-3xl lg:text-5xl justify-center md:justify-start">
             <div>
               <h1>{movie.data.attributes.title}&nbsp;</h1>
             </div>
@@ -40,7 +40,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             </div>
             <div>{movie.data.attributes.duration}</div>
           </div>
-          <div className="text-white flex flex-col pt-5 justify-center md:justify-start px-8 md:px-0 pb-24">
+          <div className="text-white flex flex-col pt-5 justify-center md:justify-start pr-8 pl-8 md:pl-0 md:pr-20 pb-24">
             <h3 className="text-xl">Overview</h3>
             <p className="text-start">{movie.data.attributes.description}</p>
           </div>
