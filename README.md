@@ -15,7 +15,7 @@ yarn dev
 
 This projetc has been setup using Next JS, TypeScript and React which consumes an API created with Strapi Headless CMS.
 
-React Query has been used to fetch all the movies, and also invalidated the query to ensure we always have fresh data.
+I used React Query for fetching all movies, and for creating a movie. For create a movie, also added invalidateQueries() function which refetch the latest data after a user adds a new movie.
 
 For styling I used Tailwind CSS.
 
@@ -25,7 +25,7 @@ I also added social login with GitHub and Google using Next Auth.
 
 # **Next Steps**
 
-The plan is to have full CRUD functionality, so will be adding an "Update a movie" feature plus "Delete a movie" which will only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
+The plan is to have full CRUD functionality, so will be adding an "Update a movie" feature plus "Delete a movie" which will both only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
 
 # **Screenshots**
 
