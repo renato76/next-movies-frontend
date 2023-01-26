@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import { MovieApiResponse } from "../fetchers/fetchMovies"
+import { FaPlay } from "react-icons/fa"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const router = useRouter()
@@ -18,7 +19,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             />
           </div>
         </div>
-        <div className="flex flex-col md:pt-20 md:pl-5 md:w-2/3">
+        <div className="flex flex-col md:pt-20 pb-20 md:pl-5 md:w-2/3">
           <div className="flex text-white text-lg md:text-3xl lg:text-5xl justify-center md:justify-start">
             <div>
               <h1>{movie.data.attributes.title}&nbsp;</h1>
@@ -40,9 +41,19 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             </div>
             <div>{movie.data.attributes.duration}</div>
           </div>
-          <div className="text-white flex flex-col pt-5 justify-center md:justify-start pr-8 pl-8 md:pl-0 md:pr-20 pb-24">
+          <div className="text-white flex flex-col pt-5 justify-center md:justify-start pr-8 pl-8 md:pl-0 md:pr-20 pb-12">
             <h3 className="text-xl">Overview</h3>
             <p className="text-start">{movie.data.attributes.description}</p>
+          </div>
+          <div className="text-white flex flex-col items-start pl-8 md:pl-0">
+            <a
+              className="cursor-pointer flex items-center"
+              href={movie.data.attributes.trailer}
+              target="_blank"
+            >
+              <FaPlay className="" color={"white"} />
+              <p className="flex items-center ml-4">Play Trailer</p>
+            </a>
           </div>
         </div>
       </div>
