@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
-import { MovieApiResopnse } from "../fetchers/fetchMovies"
+import { MovieApiResponse } from "../fetchers/fetchMovies"
 
-const MovieDetails = ({ movie }: MovieApiResopnse) => {
+const MovieDetails = ({ movie }: MovieApiResponse) => {
   const router = useRouter()
   return (
     <div className="bg-[#1d183c] w-full md:py-10 md:pl-10 min-h-screen">
