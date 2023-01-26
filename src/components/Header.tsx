@@ -42,7 +42,11 @@ const Header: FC = () => {
                     <p>Home</p>
                   </button>
                   <button
-                    onClick={() => signOut()}
+                    onClick={() =>
+                      signOut({
+                        callbackUrl: "/",
+                      })
+                    }
                     className="px-4 md:px-12 py-2 bg-[#334ae3] hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer"
                   >
                     <p>Sign out</p>
