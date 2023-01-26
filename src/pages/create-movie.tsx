@@ -57,7 +57,7 @@ const CreateMovie = () => {
         <Header />
       </div>
       <div className="text-center pt-8 pb-20 h-full bg-[#2a2a2a]">
-        <h1 className="text-white text-4xl text-bold">Create A Movie</h1>
+        <h1 className="text-white text-4xl text-bold">Add A Movie</h1>
         <div className="">
           {!session && (
             <div>
