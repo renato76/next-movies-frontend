@@ -25,7 +25,9 @@ const HomePage = () => {
       <Head>
         <title>Next Movies</title>
       </Head>
-      <Header />
+      <div className="bg-[#041791]">
+        <Header />
+      </div>
       <div className="bg-[#041791] flex justify-center">
         <h1 className="text-4xl text-bold text-white">Next Movies</h1>
       </div>

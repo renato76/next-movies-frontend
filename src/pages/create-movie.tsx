@@ -53,7 +53,7 @@ const CreateMovie = () => {
   }
   return (
     <>
-      <div>
+      <div className="bg-[#041791]">
         <Header />
       </div>
       <div className="text-center pt-8 pb-20 h-full bg-[#041791]">

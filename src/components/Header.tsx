@@ -8,10 +8,10 @@ const Header: FC = () => {
   const isOnCreateMoviePage = router.asPath === "/create-movie"
 
   return (
-    <header className="sticky text-white bg-[#041791] top-0 z-[1000] flex justify-center sm:justify-end items-center px-4 md:px-6 h-[72px]">
+    <header className="sticky text-white top-0 z-[1000] flex justify-center sm:justify-end items-center px-4 md:px-6 h-[72px]">
       <div>
         {session && (
-          <div className="flex">
+          <div className="flex mt-5">
             <div className="space-x-2">
               {!isOnCreateMoviePage && (
                 <>
