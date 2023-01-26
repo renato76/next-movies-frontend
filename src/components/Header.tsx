@@ -5,7 +5,6 @@ import { useRouter } from "next/router"
 const Header: FC = () => {
   const { data: session } = useSession()
   const router = useRouter()
-  console.log(router.asPath)
   const isOnCreateMoviePage = router.asPath === "/create-movie"
 
   return (
