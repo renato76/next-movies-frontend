@@ -19,13 +19,13 @@ React Query has been used to fetch all the movies, and also invalidated the quer
 
 For styling I used Tailwind CSS.
 
-Right now we have: Fetch all movies, and Fetch 1 movie by ID.
+Right now we have: Fetch all movies, Fetch 1 movie by ID, and Create a Movie functionalities.
 
 I also added social login with GitHub and Google using Next Auth.
 
 # **Next Steps**
 
-The plan is to have full CRUD functionality, so will be adding a Create / Update a movie plus Delete a movie which will only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
+The plan is to have full CRUD functionality, so will be adding an "Update a movie" feature plus "Delete a movie" which will only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
 
 # **Screenshots**
 
