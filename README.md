@@ -25,25 +25,40 @@ I also added social login with GitHub and Google using Next Auth.
 
 # **Next Steps**
 
-The plan is to have full CRUD functionality, so will be adding an "Update a movie" feature plus "Delete a movie" which will both only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
+- The plan is to have full CRUD functionality, so will be adding an "Update a movie" feature plus "Delete a movie" which will both only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
 
-Will also add Yup form validation which works really well with Formik.
+- Yup form validation which works really well with Formik.
+
+- Web Accessibility for screen readers, checks on headings, lists, links, site navigation, images, form validation.
+
+- Cypress E2E tests
+
+- Gitlab CI/CD Pipeline to autamatically be triggered and run tests when merging to Master.
 
 # **Screenshots**
-
 
 Homepage
 
 <img src="./src/styles/images/homepage.png" width="1200">
-
+<pre>
+</pre>
 Movie Details
 <img src="./src/styles/images/movie-details.png" width="1200">
-
+<pre>
+</pre>
 Next Auth
 <img src="./src/styles/images/next-auth.png" width="1200">
-
+<pre>
+</pre>
 React Query
 <img src="./src/styles/images/react-query.png" width="1200">
-
+<pre>
+</pre>
 Strapi API
 <img src="./src/styles/images/strapi-api.png" width="1200">
+<pre>
+</pre>
+Create Movie Form
+<img src="./src/styles/images/create-movie.png" width="1200">
+<pre>
+</pre>
