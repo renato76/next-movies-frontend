@@ -53,9 +53,9 @@ const CreateMovie = () => {
   return (
     <div className="text-center pt-20 pb-20 h-full bg-[#323235]">
       <h1 className="text-white text-4xl text-bold">Create A Movie</h1>
-      <div className="h-screen">
+      <div className="">
         {!session && (
-          <>
+          <div>
             <div>
               <h2 className="text-white mt-8 text-lg">
                 Please Sign In to create a movie
@@ -69,7 +69,7 @@ const CreateMovie = () => {
                 Sign in
               </button>
             </div>
-          </>
+          </div>
         )}
       </div>
       {session && (
