@@ -11,7 +11,7 @@ const Header: FC = () => {
     <header className="sticky text-white top-0 z-[1000] flex justify-center sm:justify-end items-center px-4 md:px-6 h-[72px]">
       <div>
         {session && (
-          <div className="flex mt-5">
+          <div className="flex my-2">
             <div className="space-x-2">
               {!isOnCreateMoviePage && (
                 <>

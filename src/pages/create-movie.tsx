@@ -53,10 +53,10 @@ const CreateMovie = () => {
   }
   return (
     <>
-      <div className="bg-[#041791]">
+      <div className="bg-[#242425] border-b border-[#ffffff42]">
         <Header />
       </div>
-      <div className="text-center pt-8 pb-20 h-full bg-[#041791]">
+      <div className="text-center pt-8 pb-20 h-full bg-[#2a2a2a]">
         <h1 className="text-white text-4xl text-bold">Create A Movie</h1>
         <div className="">
           {!session && (
@@ -134,7 +134,7 @@ const CreateMovie = () => {
                   </div>
                 </div>
                 <button
-                  className="w-full border border-black mt-5 px-12 py-3"
+                  className="w-full border border-none bg-[#334ae3] text-white text-xl text-bold hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer mt-5 px-12 py-3"
                   type="submit"
                 >
                   Submit
