@@ -2,9 +2,10 @@ import React from "react"
 import { useMutation, useQueryClient } from "react-query"
 import { useRouter } from "next/router"
 import { useSession, signIn } from "next-auth/react"
+import * as Yup from "yup"
+import { Formik, Form, Field } from "formik"
 import { createMovie } from "@/mutations/createMovie"
 import Header from "@/components/Header"
-import { Formik, Form, Field } from "formik"
 import { TextField } from "@/components/TextField"
 import { TextArea } from "@/components/TextArea"
 
@@ -32,6 +33,29 @@ const CreateMovie = () => {
     genres: [],
     imageUrl: "",
   }
+
+  const validate = Yup.object({
+    title: Yup.string()
+      .max(15, "Must be 15 characters or less")
+      .required("Required"),
+    description: Yup.string()
+      .max(500, "Must be 500 characters or less")
+      .required("Required"),
+    starring: Yup.string()
+      .max(100, "Must be 100 characters or less")
+      .required("Required"),
+    duration: Yup.string()
+      .max(6, "Must be 6 characters or less")
+      .required("Required"),
+    ageRating: Yup.string()
+      .max(4, "Must be 4 characters or less")
+      .required("Required"),
+    year: Yup.string()
+      .max(4, "Must be 4 characters or less")
+      .required("Required"),
+    trailer: Yup.string().url().required("Required"),
+    imageUrl: Yup.string().url().required("Required"),
+  })
 
   const router = useRouter()
 
@@ -83,11 +107,12 @@ const CreateMovie = () => {
             onSubmit={async (values) => {
               handleSubmit(values)
             }}
+            validationSchema={validate}
           >
             <div className="flex justify-center mt-6 w-5/6 md:max-w-[650px] m-auto text-start rounded-lg md:px-5 py-20 bg-[#f0f0f0]">
               <Form>
                 <div className="flex flex-col md:flex-row md:space-x-5">
-                  <div>
+                  <div className="md:w-1/2">
                     <TextField label="Title" name="title" type="text" />
                     <TextArea
                       label="Description"
@@ -102,7 +127,7 @@ const CreateMovie = () => {
                       type="text"
                     />
                   </div>
-                  <div>
+                  <div className="md:w-1/2">
                     <TextField label="Year" name="year" type="text" />
                     <TextField label="Trailer" name="trailer" type="text" />
                     <label htmlFor="genres" className="">
