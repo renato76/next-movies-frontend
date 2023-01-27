@@ -46,6 +46,10 @@ Movie Details
 <img src="./src/styles/images/movie-details.png" width="1200">
 <pre>
 </pre>
+Create Movie Form
+<img src="./src/styles/images/create-movie.png" width="1200">
+<pre>
+</pre>
 Next Auth
 <img src="./src/styles/images/next-auth.png" width="1200">
 <pre>
@@ -58,7 +62,4 @@ Strapi API
 <img src="./src/styles/images/strapi-api.png" width="1200">
 <pre>
 </pre>
-Create Movie Form
-<img src="./src/styles/images/create-movie.png" width="1200">
-<pre>
-</pre>
+

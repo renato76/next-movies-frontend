@@ -53,10 +53,10 @@ const CreateMovie = () => {
   }
   return (
     <>
-      <div className="bg-[#242425] border-b border-[#ffffff42]">
+      <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
         <Header />
       </div>
-      <div className="text-center pt-8 pb-20 h-full bg-[#2a2a2a]">
+      <div className="text-center pt-8 pb-20 h-full bg-gradient-to-r from-[#252242] to-[#0f0d23]">
         <h1 className="text-white text-4xl text-bold">Add A Movie</h1>
         <div>
           {!session && (

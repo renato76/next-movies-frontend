@@ -25,11 +25,8 @@ const HomePage = () => {
       <Head>
         <title>Next Movies</title>
       </Head>
-      <div className="bg-[#0a0915] border-b border-[#ffffff42]">
+      <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
         <Header />
-      </div>
-      <div className="bg-[#0a0915] flex justify-center pt-8">
-        <h1 className="text-4xl text-bold text-white">Next Movies</h1>
       </div>
       {error && <div>There is an error, please try again</div>}
       {isLoading ? (
@@ -37,7 +34,10 @@ const HomePage = () => {
           <FadeLoader color="#36d7b7" />
         </div>
       ) : (
-        <div className="bg-[#0a0915] pb-20">
+        <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] pb-20">
+          <div className="flex justify-center pt-8">
+            <h1 className="text-4xl text-bold text-white">Next Movies</h1>
+          </div>
           <div className="flex flex-col py-5 overflow-x-scroll">
             <h2 className="text-white ml-5 mb-2">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll overflow-y-hidden px-3">
