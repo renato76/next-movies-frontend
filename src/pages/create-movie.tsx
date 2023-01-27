@@ -1,5 +1,5 @@
 import React from "react"
-import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useMutation, useQueryClient } from "react-query"
 import { useRouter } from "next/router"
 import { useSession, signIn } from "next-auth/react"
 import { createMovie } from "@/mutations/createMovie"
@@ -58,7 +58,7 @@ const CreateMovie = () => {
       </div>
       <div className="text-center pt-8 pb-20 h-full bg-[#2a2a2a]">
         <h1 className="text-white text-4xl text-bold">Add A Movie</h1>
-        <div className="">
+        <div>
           {!session && (
             <div>
               <div>

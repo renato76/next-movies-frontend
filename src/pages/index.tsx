@@ -25,10 +25,10 @@ const HomePage = () => {
       <Head>
         <title>Next Movies</title>
       </Head>
-      <div className="bg-[#041791]">
+      <div className="bg-[#0a0915] border-b border-[#ffffff42]">
         <Header />
       </div>
-      <div className="bg-[#041791] flex justify-center">
+      <div className="bg-[#0a0915] flex justify-center pt-8">
         <h1 className="text-4xl text-bold text-white">Next Movies</h1>
       </div>
       {error && <div>There is an error, please try again</div>}
@@ -37,21 +37,21 @@ const HomePage = () => {
           <FadeLoader color="#36d7b7" />
         </div>
       ) : (
-        <div className="bg-[#041791]">
+        <div className="bg-[#0a0915] pb-20">
           <div className="flex flex-col py-5 overflow-x-scroll">
             <h2 className="text-white ml-5 mb-2">ALL MOVIES</h2>
-            <div className="flex cursor-pointer overflow-x-scroll px-3">
+            <div className="flex cursor-pointer overflow-x-scroll overflow-y-hidden px-3">
               {allMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
-                  className="px-1"
+                  className="px-[5px]"
                 >
-                  <div className="contain w-48">
+                  <div className="object-contain w-48">
                     <img
                       src={movie.attributes?.imageUrl}
                       alt={movie.attributes.title}
-                      className="rounded-md"
+                      className="rounded-md hover:scale-105 transition duration-500"
                     />
                   </div>
                 </Link>
@@ -60,17 +60,18 @@ const HomePage = () => {
           </div>
           <div className="flex flex-col py-5">
             <h2 className="text-white ml-5 mb-2">ACTION MOVIES</h2>
-            <div className="flex cursor-pointer overflow-x-scroll px-3">
+            <div className="flex cursor-pointer overflow-x-scroll overflow-y-hidden px-3">
               {actionMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
                   className="px-1"
                 >
-                  <div className="contain w-48">
+                  <div className="object-contain w-48 h-full">
                     <img
                       src={movie.attributes?.imageUrl}
                       alt={movie.attributes.title}
+                      className="rounded-md hover:scale-105 transition duration-500"
                     />
                   </div>
                 </Link>
