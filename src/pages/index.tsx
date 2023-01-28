@@ -13,7 +13,7 @@ const HomePage = () => {
   } = useQuery({
     queryKey: "allMovies",
     queryFn: fetchAllMovies,
-    staleTime: Infinity,
+    staleTime: Infinity, 
   })
 
   const actionMovies = allMovies?.filter((movie) =>
