@@ -13,7 +13,7 @@ yarn dev
 
 # **Overview**
 
-This projetc has been setup using Next JS, TypeScript and React which consumes an API created with Strapi Headless CMS.
+This project has been setup using Next JS, TypeScript and React JS for the frontend, which consumes an API created with Strapi Headless CMS.
 
 I used React Query for fetching all movies, and for creating a movie. For create a movie, also added invalidateQueries() into the onSuccess of the mutate function which refetch the latest data after a user successfully adds a new movie.
 
