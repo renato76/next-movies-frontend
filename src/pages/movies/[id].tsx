@@ -4,7 +4,7 @@ import MovieDetails from "@/components/MovieDetails"
 
 const Movie = ({ movie }: MovieApiResponse) => {
   return (
-    <div className="">
+    <div>
       <MovieDetails movie={movie} />
     </div>
   )

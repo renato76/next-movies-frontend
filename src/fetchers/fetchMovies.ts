@@ -16,7 +16,7 @@ export interface AllMoviesApiResponse {
 export interface MovieApiResponse {
   movie: {
     data: {
-      id: string
+      id?: string
       attributes: {
         title: string
         description: string
