@@ -27,13 +27,15 @@ I also added social login with GitHub and Google using Next Auth.
 
 - The plan is to have full CRUD functionality, so will be adding "Delete a movie" which will only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
 
-- Yup form validation which works really well with Formik.
+- Refactor to use Next JS 13 Server / Client Components using the app folder
+
+- Form fields validation.
 
 - Web Accessibility for screen readers, checks on headings, lists, links, site navigation, images, form validation.
 
-- Cypress E2E tests
+- Cypress E2E tests.
 
-- Gitlab CI/CD Pipeline to autamatically be triggered and run tests when merging to Master.
+- Gitlab CI/CD Pipeline.
 
 # **Screenshots**
 
