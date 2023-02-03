@@ -1,5 +1,5 @@
 import { FieldHookConfig, useField } from "formik"
-import { InputHTMLAttributes, ClassAttributes } from "react"
+import { TextareaHTMLAttributes, ClassAttributes } from "react"
 
 interface OtherProps {
   label: string
@@ -8,8 +8,8 @@ interface OtherProps {
 export const TextArea = ({
   label,
   ...props
-}: InputHTMLAttributes<HTMLInputElement> &
-  ClassAttributes<HTMLInputElement> &
+}: TextareaHTMLAttributes<HTMLTextAreaElement> &
+  ClassAttributes<HTMLTextAreaElement> &
   FieldHookConfig<string> &
   OtherProps) => {
   const [field, meta] = useField(props)
@@ -18,7 +18,7 @@ export const TextArea = ({
       <label htmlFor={field.name} className="mr-2">
         {label}
       </label>
-      <input
+      <textarea
         type="text"
         className="form-control mt-1 w-full h-[120px] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
         focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
@@ -28,6 +28,8 @@ export const TextArea = ({
         {...field}
         {...props}
         autoComplete="off"
+        rows={4}
+        cols={50}
       />
     </div>
   )
