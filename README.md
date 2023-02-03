@@ -19,13 +19,13 @@ I used React Query for fetching all movies, and for creating a movie. For create
 
 For the Create a Movie form I used Formik.
 
-Right now we have: Fetch all movies, Fetch 1 movie by ID, and Create a Movie functionalities.
+API Functionality includes: Read All Movies, Read One Movie, Create A Movie, Update A Movie.
 
 I also added social login with GitHub and Google using Next Auth.
 
 # **Next Steps**
 
-- The plan is to have full CRUD functionality, so will be adding an "Update a movie" feature plus "Delete a movie" which will both only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
+- The plan is to have full CRUD functionality, so will be adding "Delete a movie" which will only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
 
 - Yup form validation which works really well with Formik.
 
