@@ -17,6 +17,7 @@ async function updateMovie(req: NextApiRequest, res: NextApiResponse) {
       trailer: movie.trailer,
       genres: [...movie.genres],
       imageUrl: movie.imageUrl,
+      backdropUrl: movie.backdropUrl,
     },
   }
 

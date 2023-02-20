@@ -10,6 +10,7 @@ export interface AllMoviesApiResponse {
     trailer: string
     genres: string[]
     imageUrl: string
+    backdropUrl: string
   }
 }
 
@@ -27,6 +28,7 @@ export interface MovieApiResponse {
         trailer: string
         genres: string[]
         imageUrl: string
+        backdropUrl: string
       }
     }
   }

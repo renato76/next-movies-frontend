@@ -12,15 +12,16 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
   const handleEditMovie = () => {
     setShowMovieForm(true)
   }
+  console.log(movie.data)
 
   return (
     <div className="h-[1400px] md:h-[900px] lg:h-[700px]">
       <div className="h-full w-full relative overflow-y-scroll ">
         <img
-          src="https://www.themoviedb.org/t/p/original/evaFLqtswezLosllRZtJNMiO1UR.jpg"
+          src={movie?.data?.attributes?.backdropUrl}
           className="w-full h-full object-cover absolute opacity-100"
         />
-        <div className="w-full h-full absolute top-0 left-0 bg-[#0a123d] opacity-95"></div>
+        <div className="w-full h-full absolute top-0 left-0 bg-[#0a123d] opacity-90"></div>
         <div className="w-full md:pl-10 absolute top-0 left-0">
           <button type="button" onClick={() => router.back()}>
             <p className="text-white pl-5 py-5">Back to home</p>
@@ -29,8 +30,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             <div className="flex opacity-100">
               <div className="flex justify-center mb-3 mx-3 object-contain h-auto md:mt-5">
                 <img
-                  src={movie.data.attributes.imageUrl}
-                  alt={movie.data.attributes.title}
+                  src={movie?.data?.attributes?.imageUrl}
+                  alt={movie?.data?.attributes?.title}
                   className="w-96 rounded-md opacity-100"
                 />
               </div>
@@ -46,7 +47,10 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
               </div>
               <div className="text-white flex text-center py-5 justify-center md:justify-start">
                 {movie.data.attributes?.genres?.map((genre) => (
-                  <div className=" bg-pink-600 mr-2 text-center text-sm rounded-lg">
+                  <div
+                    key={genre}
+                    className=" bg-pink-600 mr-2 text-center text-sm rounded-lg"
+                  >
                     <p className="px-4 py-1">{genre}</p>
                   </div>
                 ))}

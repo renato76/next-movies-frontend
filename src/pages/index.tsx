@@ -20,6 +20,8 @@ const HomePage = () => {
     movie?.attributes?.genres?.find((genre) => genre.includes("Action"))
   )
 
+  console.log('allMovies', allMovies)
+
   return (
     <>
       <Head>
@@ -46,6 +48,7 @@ const HomePage = () => {
                   key={movie.id}
                   href={`/movies/${movie.id}`}
                   className="px-[5px]"
+                 
                 >
                   <div className="object-contain w-48">
                     <img

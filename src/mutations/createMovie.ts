@@ -20,6 +20,7 @@ export const createMovie = async (
       trailer: values.trailer,
       genres: [...values.genres],
       imageUrl: values.imageUrl,
+      backdropUrl: values.backdropUrl,
     }),
   })
   const response = await rawResponse.json()

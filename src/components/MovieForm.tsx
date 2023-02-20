@@ -3,10 +3,10 @@ import { useMutation, useQueryClient } from "react-query"
 import { useRouter } from "next/router"
 import { Formik, Form, Field } from "formik"
 import { createMovie } from "@/mutations/createMovie"
+import { updateMovie } from "@/mutations/updateMovie"
 import { TextField } from "@/components/TextField"
 import { TextArea } from "@/components/TextArea"
 import { CreateMovieApiRequest } from "@/pages/create-movie"
-import { updateMovie } from "@/mutations/updateMovie"
 
 export interface MovieProps {
   id?: string
@@ -20,6 +20,7 @@ export interface MovieProps {
     trailer: string
     genres: string[]
     imageUrl: string
+    backdropUrl: string
   }
 }
 
@@ -34,6 +35,7 @@ const MovieForm = ({ data, id }: MovieProps) => {
     trailer: "",
     genres: [],
     imageUrl: "",
+    backdropUrl: "",
   }
   const savedValues: CreateMovieApiRequest = {
     title: data.title,
@@ -45,6 +47,7 @@ const MovieForm = ({ data, id }: MovieProps) => {
     trailer: data.trailer,
     genres: [...data.genres],
     imageUrl: data.imageUrl,
+    backdropUrl: data.backdropUrl,
   }
   const [formValues, setFormValues] = useState(savedValues)
   const isEditing = data.title.length > 0
@@ -144,6 +147,11 @@ const MovieForm = ({ data, id }: MovieProps) => {
                       <TextField
                         label="Image URL"
                         name="imageUrl"
+                        type="text"
+                      />
+                       <TextField
+                        label="Backdrop URL"
+                        name="backdropUrl"
                         type="text"
                       />
                     </div>

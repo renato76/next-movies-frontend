@@ -1,12 +1,5 @@
-import React from "react"
-import { useMutation, useQueryClient } from "react-query"
-import { useRouter } from "next/router"
 import { useSession, signIn } from "next-auth/react"
-import { createMovie } from "@/mutations/createMovie"
 import Header from "@/components/Header"
-import { Formik, Form, Field, useFormik } from "formik"
-import { TextField } from "@/components/TextField"
-import { TextArea } from "@/components/TextArea"
 import MovieForm from "@/components/MovieForm"
 
 export interface CreateMovieApiRequest {
@@ -20,6 +13,7 @@ export interface CreateMovieApiRequest {
   trailer: string
   genres: string[]
   imageUrl: string
+  backdropUrl: string
 }
 
 const CreateMovie = () => {
@@ -33,6 +27,7 @@ const CreateMovie = () => {
     trailer: "",
     genres: [],
     imageUrl: "",
+    backdropUrl: "",
   }
 
   const { data: session } = useSession()
