@@ -14,6 +14,7 @@ export interface CreateMovieApiRequest {
   genres: string[]
   imageUrl: string
   backdropUrl: string
+  overlayColor: string
 }
 
 const CreateMovie = () => {
@@ -28,6 +29,7 @@ const CreateMovie = () => {
     genres: [],
     imageUrl: "",
     backdropUrl: "",
+    overlayColor: "",
   }
 
   const { data: session } = useSession()

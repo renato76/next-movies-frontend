@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
+import Image from "next/image"
 import { MovieApiResponse } from "../fetchers/fetchMovies"
 import Modal from "./Modal"
 import { FaPlay, FaEdit } from "react-icons/fa"
 import MovieForm from "./MovieForm"
+import { data } from "autoprefixer"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const [showMovieForm, setShowMovieForm] = useState(false)
@@ -12,16 +14,20 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
   const handleEditMovie = () => {
     setShowMovieForm(true)
   }
-  console.log(movie.data)
 
   return (
     <div className="h-[1400px] md:h-[900px] lg:h-[700px]">
       <div className="h-full w-full relative overflow-y-scroll ">
-        <img
+        <Image
           src={movie?.data?.attributes?.backdropUrl}
+          alt={movie.data.attributes.title}
           className="w-full h-full object-cover absolute opacity-100"
+          width={1000}
+          height={500}
         />
-        <div className="w-full h-full absolute top-0 left-0 bg-[#0a123d] opacity-90"></div>
+        <div
+          className={`w-full h-full absolute top-0 left-0 bg-[${movie.data.attributes.overlayColor}] opacity-90`}
+        ></div>
         <div className="w-full md:pl-10 absolute top-0 left-0">
           <button type="button" onClick={() => router.back()}>
             <p className="text-white pl-5 py-5">Back to home</p>
@@ -29,10 +35,12 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           <div className="flex flex-col items-center md:flex-row md:items-start md:w-full">
             <div className="flex opacity-100">
               <div className="flex justify-center mb-3 mx-3 object-contain h-auto md:mt-5">
-                <img
+                <Image
                   src={movie?.data?.attributes?.imageUrl}
                   alt={movie?.data?.attributes?.title}
-                  className="w-96 rounded-md opacity-100"
+                  className="rounded-md opacity-100"
+                  width={360}
+                  height={500}
                 />
               </div>
             </div>

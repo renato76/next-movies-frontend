@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Image from "next/image"
 import Header from "../components/Header"
 import { useQuery } from "react-query"
 import { fetchAllMovies } from "../fetchers/fetchMovies"
@@ -19,8 +20,6 @@ const HomePage = () => {
   const actionMovies = allMovies?.filter((movie) =>
     movie?.attributes?.genres?.find((genre) => genre.includes("Action"))
   )
-
-  console.log('allMovies', allMovies)
 
   return (
     <>
@@ -48,13 +47,14 @@ const HomePage = () => {
                   key={movie.id}
                   href={`/movies/${movie.id}`}
                   className="px-[5px]"
-                 
                 >
                   <div className="object-contain w-48">
-                    <img
+                    <Image
                       src={movie.attributes?.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-105 transition duration-500"
+                      width={220}
+                      height={120}
                     />
                   </div>
                 </Link>
@@ -71,10 +71,12 @@ const HomePage = () => {
                   className="px-1"
                 >
                   <div className="object-contain w-48 h-full">
-                    <img
+                    <Image
                       src={movie.attributes?.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-105 transition duration-500"
+                      width={220}
+                      height={120}
                     />
                   </div>
                 </Link>

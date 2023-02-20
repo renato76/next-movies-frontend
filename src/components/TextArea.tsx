@@ -15,7 +15,7 @@ export const TextArea = ({
   const [field, meta] = useField(props)
   return (
     <div className="mb-2 text-start w-full">
-      <label htmlFor={field.name} className="mr-2">
+      <label htmlFor={field.name} className="ml-2 text-sm font-bold">
         {label}
       </label>
       <textarea

@@ -17,6 +17,7 @@ export const handlers = (
           genres: ["action", "drama"],
           imageUrl: "http://imageurl.com",
           backdropUrl: "http://imageurl.com",
+          overlayColor: "http://imageurl.com",
         },
       })
     )
