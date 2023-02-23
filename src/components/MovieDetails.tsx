@@ -5,7 +5,6 @@ import { MovieApiResponse } from "../fetchers/fetchMovies"
 import Modal from "./Modal"
 import { FaPlay, FaEdit } from "react-icons/fa"
 import MovieForm from "./MovieForm"
-import { data } from "autoprefixer"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const [showMovieForm, setShowMovieForm] = useState(false)
@@ -17,20 +16,20 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
 
   return (
     <div className="h-[1400px] md:h-[900px] lg:h-[700px]">
-      <div className="h-full w-full relative overflow-y-scroll ">
+      <div className="h-full w-full relative overflow-y-scroll">
         <Image
           src={movie?.data?.attributes?.backdropUrl}
           alt={movie.data.attributes.title}
-          className="w-full h-full object-cover absolute opacity-100"
-          width={1000}
+          className="w-full h-full object-cover absolute"
+          width={800}
           height={500}
         />
         <div
-          className={`w-full h-full absolute top-0 left-0 bg-[${movie.data.attributes.overlayColor}] opacity-90`}
+          className={`w-full h-full absolute top-0 left-0 bg-[#272727] opacity-90`}
         ></div>
         <div className="w-full md:pl-10 absolute top-0 left-0">
           <button type="button" onClick={() => router.back()}>
-            <p className="text-white pl-5 py-5">Back to home</p>
+            <p className="text-white pl-5 pt-5">Back to home</p>
           </button>
           <div className="flex flex-col items-center md:flex-row md:items-start md:w-full">
             <div className="flex opacity-100">
@@ -39,7 +38,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                   src={movie?.data?.attributes?.imageUrl}
                   alt={movie?.data?.attributes?.title}
                   className="rounded-md opacity-100"
-                  width={360}
+                  width={380}
                   height={500}
                 />
               </div>
@@ -89,7 +88,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                   href={movie.data.attributes.trailer}
                   target="_blank"
                 >
-                  <FaPlay className="" color={"white"} />
+                  <FaPlay color={"white"} />
                   <p className="flex items-center ml-4">Play Trailer</p>
                 </a>
               </div>
