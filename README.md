@@ -39,29 +39,38 @@ I also added social login with GitHub and Google using Next Auth.
 
 # **Screenshots**
 
-Homepage
-
+## **Homepage:** 
 <img src="./src/styles/images/homepage.png" width="1200">
 <pre>
 </pre>
-Movie Details
+
+## **Movie Details:** 
 <img src="./src/styles/images/movie-details.png" width="1200">
 <pre>
 </pre>
-Create Movie Form
+
+## **Add a Movie Form:** 
 <img src="./src/styles/images/create-movie.png" width="1200">
 <pre>
 </pre>
-Next Auth
+
+## **Naxt Auth:** 
 <img src="./src/styles/images/next-auth.png" width="1200">
 <pre>
 </pre>
-React Query
+
+## **React Query:** 
 <img src="./src/styles/images/react-query.png" width="1200">
 <pre>
 </pre>
-Strapi API
+
+## **Strapi API:** 
 <img src="./src/styles/images/strapi-api.png" width="1200">
+<pre>
+</pre>
+
+## **Testing API with Insomnia:**
+<img src="./src/styles/images/insomnia-api-testing.png" width="1200">
 <pre>
 </pre>
 
