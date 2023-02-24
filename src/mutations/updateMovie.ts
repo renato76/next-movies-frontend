@@ -22,7 +22,6 @@ export const updateMovie = async ({
       genres: [...values.genres],
       imageUrl: values.imageUrl,
       backdropUrl: values.backdropUrl,
-      overlayColor: values.overlayColor,
     }),
   })
   const response = await rawResponse.json()

@@ -18,11 +18,12 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
     <div className="h-[1400px] md:h-[900px] lg:h-[700px]">
       <div className="h-full w-full relative overflow-y-scroll">
         <Image
-          src={movie?.data?.attributes?.backdropUrl}
+          src={movie.data.attributes.backdropUrl}
           alt={movie.data.attributes.title}
           className="w-full h-full object-cover absolute"
           width={800}
           height={500}
+          priority={true}
         />
         <div
           className={`w-full h-full absolute top-0 left-0 bg-[#272727] opacity-90`}
@@ -35,8 +36,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             <div className="flex opacity-100">
               <div className="flex justify-center mb-3 mx-3 object-contain h-auto md:mt-5">
                 <Image
-                  src={movie?.data?.attributes?.imageUrl}
-                  alt={movie?.data?.attributes?.title}
+                  src={movie.data.attributes.imageUrl}
+                  alt={movie.data.attributes.title}
                   className="rounded-md opacity-100"
                   width={380}
                   height={500}
@@ -53,7 +54,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 </div>
               </div>
               <div className="text-white flex text-center py-5 justify-center md:justify-start">
-                {movie.data.attributes?.genres?.map((genre) => (
+                {movie.data.attributes.genres.map((genre) => (
                   <div
                     key={genre}
                     className=" bg-pink-600 mr-2 text-center text-sm rounded-lg"

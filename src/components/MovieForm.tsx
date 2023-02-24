@@ -21,7 +21,6 @@ export interface MovieProps {
     genres: string[]
     imageUrl: string
     backdropUrl: string
-    overlayColor: string
   }
 }
 
@@ -37,7 +36,6 @@ const MovieForm = ({ data, id }: MovieProps) => {
     genres: [],
     imageUrl: "",
     backdropUrl: "",
-    overlayColor: "",
   }
   const savedValues: CreateMovieApiRequest = {
     title: data.title,
@@ -50,7 +48,6 @@ const MovieForm = ({ data, id }: MovieProps) => {
     genres: [...data.genres],
     imageUrl: data.imageUrl,
     backdropUrl: data.backdropUrl,
-    overlayColor: data.overlayColor,
   }
   const [formValues, setFormValues] = useState(savedValues)
   const isEditing = data.title.length > 0
@@ -155,11 +152,6 @@ const MovieForm = ({ data, id }: MovieProps) => {
                        <TextField
                         label="Backdrop URL"
                         name="backdropUrl"
-                        type="text"
-                      />
-                       <TextField
-                        label="Overlay Colour"
-                        name="overlayColor"
                         type="text"
                       />
                     </div>

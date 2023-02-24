@@ -50,7 +50,7 @@ const HomePage = () => {
                 >
                   <div className="object-contain w-48">
                     <Image
-                      src={movie.attributes?.imageUrl}
+                      src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-105 transition duration-500"
                       width={220}
@@ -72,7 +72,7 @@ const HomePage = () => {
                 >
                   <div className="object-contain w-48 h-full">
                     <Image
-                      src={movie.attributes?.imageUrl}
+                      src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-105 transition duration-500"
                       width={220}

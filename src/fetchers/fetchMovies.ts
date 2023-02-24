@@ -11,7 +11,6 @@ export interface AllMoviesApiResponse {
     genres: string[]
     imageUrl: string
     backdropUrl: string
-    overlayColor: string
   }
 }
 
@@ -30,7 +29,6 @@ export interface MovieApiResponse {
         genres: string[]
         imageUrl: string
         backdropUrl: string
-        overlayColor: string
       }
     }
   }

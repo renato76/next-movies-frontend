@@ -18,7 +18,6 @@ async function updateMovie(req: NextApiRequest, res: NextApiResponse) {
       genres: [...movie.genres],
       imageUrl: movie.imageUrl,
       backdropUrl: movie.backdropUrl,
-      overlayColor: movie.overlayColor,
     },
   }
 
