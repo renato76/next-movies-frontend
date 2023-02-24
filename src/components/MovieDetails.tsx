@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
+import { useSession, signIn, signOut } from "next-auth/react"
 import Image from "next/image"
 import { MovieApiResponse } from "../fetchers/fetchMovies"
 import Modal from "./Modal"
@@ -8,6 +9,7 @@ import MovieForm from "./MovieForm"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const [showMovieForm, setShowMovieForm] = useState(false)
+  const { data: session } = useSession()
   const router = useRouter()
 
   const handleEditMovie = () => {
@@ -69,15 +71,17 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 </div>
                 <div>{movie.data.attributes.duration}</div>
               </div>
-              <div className="text-white flex pt-5 justify-between items-center mb-2">
-                <h3 className="font-bold text-xl pl-8 md:pl-0">Overview</h3>
-                <div
-                  className="text-white flex mr-20 pb-2 cursor-pointer"
-                  onClick={handleEditMovie}
-                >
-                  <FaEdit size={"25px"} />
+              {session && (
+                <div className="text-white flex pt-5 justify-between items-center mb-2">
+                  <h3 className="font-bold text-xl pl-8 md:pl-0">Overview</h3>
+                  <div
+                    className="text-white flex mr-20 pb-2 cursor-pointer"
+                    onClick={handleEditMovie}
+                  >
+                    <FaEdit size={"25px"} />
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="text-white pr-12 mb-8 pl-8 md:pl-0">
                 <p className="text-start">
                   {movie.data.attributes.description}
