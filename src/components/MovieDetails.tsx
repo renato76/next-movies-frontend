@@ -17,7 +17,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
   }
 
   return (
-    <div className="h-[1400px] md:h-[900px] lg:h-[700px]">
+    <div className="h-[1200px] md:h-screen">
       <div className="h-full w-full relative overflow-y-scroll">
         <Image
           src={movie.data.attributes.backdropUrl}
