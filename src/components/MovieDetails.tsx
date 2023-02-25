@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import Image from "next/image"
 import { MovieApiResponse } from "../fetchers/fetchMovies"
 import Modal from "./Modal"
