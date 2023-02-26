@@ -28,7 +28,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           priority={true}
         />
         <div
-          className={`w-full h-full absolute top-0 left-0 bg-[#272727] opacity-90`}
+          className={`w-full h-full absolute top-0 left-0 bg-[#0a123d] opacity-90`}
         ></div>
         <div className="w-full md:pl-10 absolute top-0 left-0">
           <button type="button" onClick={() => router.back()}>
