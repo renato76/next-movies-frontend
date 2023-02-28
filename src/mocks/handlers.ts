@@ -35,7 +35,7 @@ export const handlers = rest.get(
             imageUrl: "http://imageurl.com",
             backdropUrl: "http://imageurl.com",
           },
-        },
+        }
       ])
     )
   }

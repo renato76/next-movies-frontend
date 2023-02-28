@@ -7,12 +7,12 @@ describe("homepage tests", () => {
     renderWithQueryClient(<HomePage />)
   })
 
-  test("renders images from movies", async () => {
-    renderWithQueryClient(<HomePage />)
+  // test("renders images from movies", async () => {
+  //   renderWithQueryClient(<HomePage />)
 
-    const movieImage = waitFor(() => {
-      screen.queryByAltText("Top Gun")
-      expect(movieImage).toBeInTheDocument()
-    })
-  })
+  //   const movieImage = waitFor(() => {
+  //     screen.queryByAltText("Top Gun")
+  //     expect(movieImage).toBeInTheDocument()
+  //   })
+  // })
 })

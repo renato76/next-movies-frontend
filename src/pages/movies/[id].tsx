@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next"
 import { MovieApiResponse } from "../../fetchers/fetchMovies"
 import MovieDetails from "@/components/MovieDetails"
-import {MovieProps} from "../../components/MovieForm"
+import { MovieProps } from "../../components/MovieForm"
 
 const Movie = ({ movie }: MovieApiResponse) => {
   return (

@@ -91,7 +91,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 <a
                   className="cursor-pointer flex items-center"
                   href={movie.data.attributes.trailer}
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                 >
                   <FaPlay color={"white"} />
                   <p className="flex items-center ml-4">Play Trailer</p>

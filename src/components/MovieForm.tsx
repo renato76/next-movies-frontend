@@ -149,7 +149,7 @@ const MovieForm = ({ data, id }: MovieProps) => {
                         name="imageUrl"
                         type="text"
                       />
-                       <TextField
+                      <TextField
                         label="Backdrop URL"
                         name="backdropUrl"
                         type="text"
