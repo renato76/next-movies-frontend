@@ -12,11 +12,6 @@ yarn dev
 ```
 # **Next Movies**
 
-# **Aim / Goals** 🚀
-The aim of this project was to practice using Next JS with TypeScript, and also to implement and practice using React Testing Library for unit / integration testing.
-I have recently discovered React Query, and I really like the way it allows you to fetch, synchronize, update, and cache data, so I have used this for all API requests in this project.
-
-
 # **Overview** ☀️
 
 I set this project up using Next JS, TypeScript and React JS for the frontend, which consumes an API created with Strapi Headless CMS.
@@ -28,6 +23,18 @@ I used Formik to create the form for adding / updating a movie.
 API Functionality includes: Fetch All Movies, Fetch One Movie, Add A Movie, Update A Movie.
 
 For Authentication, I used Next Auth and implemented Social Login for Google and GitHub account users.
+
+# **Tech Stack** 🚀
+
+- React
+- Next.js 13
+- TypeScript
+- Next Auth
+- Tailwind CSS
+- Formik
+- React Testing Library
+- Cypress
+- GitLab
 
 # **Next Steps** 🎯
 
@@ -49,38 +56,37 @@ For Authentication, I used Next Auth and implemented Social Login for Google and
 
 # **Screenshots** ⭐️
 
-## **Homepage:** 
+**Homepage:** 
 <img src="./src/styles/images/homepage.png" width="1200">
-<pre>
-</pre>
 
-## **Movie Details:** 
+</br>
+
+**Movie Details:** 
 <img src="./src/styles/images/movie-details.png" width="1200">
-<pre>
-</pre>
 
-## **Add a Movie Form:** 
+</br>
+
+**Add a Movie Form:** 
 <img src="./src/styles/images/create-movie.png" width="1200">
-<pre>
-</pre>
 
-## **Naxt Auth:** 
+</br>
+
+**Naxt Auth:** 
 <img src="./src/styles/images/next-auth.png" width="1200">
-<pre>
-</pre>
 
-## **React Query:** 
+</br>
+
+**React Query:** 
 <img src="./src/styles/images/react-query.png" width="1200">
-<pre>
-</pre>
 
-## **Strapi API:** 
+</br>
+
+**Strapi API:** 
 <img src="./src/styles/images/strapi-api.png" width="1200">
-<pre>
-</pre>
 
-## **Testing API with Insomnia:**
+</br>
+
+**Testing API with Insomnia:**
 <img src="./src/styles/images/insomnia-api-testing.png" width="1200">
-<pre>
-</pre>
+
 
