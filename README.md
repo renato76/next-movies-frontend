@@ -16,11 +16,16 @@ yarn dev
 
 I set this project up using Next JS, TypeScript and React JS for the frontend, which consumes an API created with Strapi Headless CMS.
 
-I used React Query for fetching data from the API. For add / update a movie, I added invalidateQueries() into the onSuccess of the mutate function which will refetch the latest data after a user successfully adds or updates new movie.
+I used React Query for fetching data from the API. 
 
 I used Formik to create the form for adding / updating a movie.
 
-API Functionality includes: Fetch All Movies, Fetch One Movie, Add A Movie, Update A Movie.
+Current API Functionality includes: 
+
+- read all
+- read one
+- create one
+- update one
 
 For Authentication, I used Next Auth and implemented Social Login for Google and GitHub account users.
 
