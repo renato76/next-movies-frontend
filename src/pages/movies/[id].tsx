@@ -26,10 +26,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(`${process.env.MOVIES_ENDPOINT}/movies`)
   const movies = await response.json()
 
-  const paths = movies && movies.data.map((movie: MovieProps) => {
+  const paths = movies?.data.map((movie: MovieProps, key: string) => {
     return {
-      key: movie.id,
-      params: { id: movie.id?.toString() },
+      params: { id: movie.id?.toString(), key: movie.id },
     }
   })
   return {
