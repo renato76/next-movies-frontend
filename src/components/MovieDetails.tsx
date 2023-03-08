@@ -71,17 +71,18 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 </div>
                 <div>{movie.data.attributes.duration}</div>
               </div>
-              {session && (
-                <div className="text-white flex pt-5 justify-between items-center mb-2">
-                  <h3 className="font-bold text-xl pl-8 md:pl-0">Overview</h3>
+              <div className="text-white flex pt-5 justify-between items-center mb-2">
+                <h3 className="font-bold text-xl pl-8 md:pl-0">Overview</h3>
+                {session && (
                   <div
                     className="text-white flex mr-20 pb-2 cursor-pointer"
                     onClick={handleEditMovie}
                   >
                     <FaEdit size={"25px"} />
                   </div>
-                </div>
-              )}
+                )}
+              </div>
+
               <div className="text-white pr-12 mb-8 pl-8 md:pl-0">
                 <p className="text-start">
                   {movie.data.attributes.description}
@@ -91,7 +92,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 <a
                   className="cursor-pointer flex items-center"
                   href={movie.data.attributes.trailer}
-                  target="_blank" rel="noreferrer"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <FaPlay color={"white"} />
                   <p className="flex items-center ml-4">Play Trailer</p>
