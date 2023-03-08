@@ -28,6 +28,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = movies && movies.data.map((movie: MovieProps) => {
     return {
+      key: movie.id,
       params: { id: movie.id?.toString() },
     }
   })
