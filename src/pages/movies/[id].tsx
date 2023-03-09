@@ -19,6 +19,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       movie,
     },
+    revalidate: 300,
   }
 }
 
@@ -33,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   })
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
