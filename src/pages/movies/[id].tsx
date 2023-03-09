@@ -28,12 +28,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = movies?.data.map((movie: MovieProps) => {
     return {
-      params: { id: movie.id?.toString(), key: movie.id },
+      params: { id: movie.id?.toString() },
     }
   })
   return {
     paths,
-    fallback: true,
+    fallback: false,
   }
 }
 
