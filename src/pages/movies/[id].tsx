@@ -5,14 +5,16 @@ import { MovieProps } from "../../components/MovieForm"
 
 const Movie = ({ movie }: MovieApiResponse) => {
   return (
-    <div>
+    <>
       <MovieDetails movie={movie} />
-    </div>
+    </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(`${process.env.MOVIES_ENDPOINT}/movies/${params?.id}`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies/${params?.id}`
+  )
   const movie: MovieApiResponse = await res.json()
 
   return {
@@ -24,17 +26,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch(`${process.env.MOVIES_ENDPOINT}/movies`)
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies`
+  )
   const movies = await response.json()
 
-  const paths = movies?.data?.map((movie: MovieProps) => {
+  const moviePaths = movies?.data?.map((movie: MovieProps) => {
     return {
-      params: { id: movie.id?.toString() } ,
+      params: { id: movie.id?.toString() },
     }
   })
   return {
-    paths,
-    fallback: 'blocking',
+    paths: [...moviePaths],
+    fallback: false,
   }
 }
 
