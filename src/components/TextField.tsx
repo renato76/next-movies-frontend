@@ -12,7 +12,7 @@ export const TextField = ({
   ClassAttributes<HTMLInputElement> &
   FieldHookConfig<string> &
   OtherProps) => {
-  const [field, meta] = useField(props)
+  const [field] = useField(props)
   return (
     <div className="mb-2 text-start w-full">
       <label htmlFor={field.name} className="ml-2 text-sm font-bold">

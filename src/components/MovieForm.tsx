@@ -49,24 +49,21 @@ const MovieForm = ({ data, id }: MovieProps) => {
     imageUrl: data.imageUrl,
     backdropUrl: data.backdropUrl,
   }
-  const [formValues, setFormValues] = useState(savedValues)
+  const [formValues] = useState(savedValues)
   const isEditing = data.title.length > 0
   const router = useRouter()
 
   const queryClient = useQueryClient()
 
-  const { mutateAsync: createMovieMutate, isLoading: isSubmittingCreate } =
-    useMutation({
-      mutationFn: createMovie,
-      mutationKey: "movies/create",
-      onSuccess: () =>
-        queryClient.invalidateQueries({ queryKey: ["allMovies"] }),
-    })
+  const { mutateAsync: createMovieMutate } = useMutation({
+    mutationFn: createMovie,
+    mutationKey: "movies/create",
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["allMovies"] }),
+  })
 
-  const { mutateAsync: updateMovieMutate, isLoading: isSubmittingEdit } =
-    useMutation({
-      mutationFn: updateMovie,
-    })
+  const { mutateAsync: updateMovieMutate } = useMutation({
+    mutationFn: updateMovie,
+  })
 
   const handleSubmit = async (values: CreateMovieApiRequest) => {
     if (isEditing) {
@@ -119,7 +116,10 @@ const MovieForm = ({ data, id }: MovieProps) => {
                     <div className="">
                       <TextField label="Year" name="year" type="text" />
                       <TextField label="Trailer" name="trailer" type="text" />
-                      <label htmlFor="genres" className="ml-2 text-sm font-bold">
+                      <label
+                        htmlFor="genres"
+                        className="ml-2 text-sm font-bold"
+                      >
                         Choose Genres
                       </label>
                       <Field
