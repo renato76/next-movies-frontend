@@ -26,19 +26,27 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies`
-  )
-  const movies = await response.json()
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies`
+    )
+    const movies = await response.json()
 
-  const moviePaths = movies?.data?.map((movie: MovieProps) => {
+    const moviePaths = movies?.data?.map((movie: MovieProps) => {
+      return {
+        params: { id: movie.id?.toString() },
+      }
+    })
     return {
-      params: { id: movie.id?.toString() },
+      paths: [...moviePaths],
+      fallback: false,
     }
-  })
-  return {
-    paths: [...moviePaths],
-    fallback: false,
+  } catch (err) {
+    console.log(err)
+    return {
+      fallback: false,
+      paths: [],
+    }
   }
 }
 
