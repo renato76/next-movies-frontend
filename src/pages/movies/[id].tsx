@@ -1,17 +1,9 @@
 import { GetStaticProps, GetStaticPaths } from "next"
-import { useRouter } from "next/router"
-
 import { MovieApiResponse } from "../../fetchers/fetchMovies"
 import MovieDetails from "@/components/MovieDetails"
 import { MovieProps } from "../../components/MovieForm"
 
 const Movie = ({ movie }: MovieApiResponse) => {
-  const router = useRouter()
-
-  if (router.isFallback) {
-    return <h1>Loading...</h1>
-  }
-
   return (
     <>
       <MovieDetails movie={movie} />
@@ -29,7 +21,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       movie,
     },
-    revalidate: 300,
+    revalidate: 10,
   }
 }
 
@@ -47,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     })
     return {
       paths: [...moviePaths],
-      fallback: true,
+      fallback: false,
     }
   } catch (err) {
     console.log("there has been an error in getStaticPaths", err)

@@ -63,6 +63,8 @@ const MovieForm = ({ data, id }: MovieProps) => {
 
   const { mutateAsync: updateMovieMutate } = useMutation({
     mutationFn: updateMovie,
+    mutationKey: "movies/update",
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["allMovies"] }),
   })
 
   const handleSubmit = async (values: CreateMovieApiRequest) => {
