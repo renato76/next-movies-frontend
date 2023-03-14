@@ -18,8 +18,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
   }
 
   return (
-    <div className="h-[1200px] md:h-screen">
-      <div className="h-full w-full relative overflow-y-scroll">
+    <div className="h-[1500px] md:h-screen overflow-y-scroll pb-20 md:pb-0">
+      <div className="h-full w-full relative">
         <Image
           src={movie.data.attributes.backdropUrl}
           alt={movie.data.attributes.title}
@@ -36,7 +36,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             <button
               type="button"
               onClick={() => router.back()}
-              className="mt-5 mb-5 md:mb-0 md:ml-3 border hover:bg-[#e0e0e0] transition duration-500 rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#232323]"
+              className="mt-5 mb-5 md:mb-0 md:ml-3 border hover:bg-[#e0e0e0] transition duration-500 rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#0a123d]"
             >
               <div className="flex items-center">
                 <div className="mr-1">
@@ -60,7 +60,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             </div>
             <div className="flex grow flex-col pb-20 md:pt-5 md:pb-5 md:pl-5 md:w-2/3 ">
               <div className="flex text-white font-bold text-2xl md:text-4xl lg:text-5xl justify-center md:justify-start">
-                <div className="">
+                <div className="pr-12 mb-2 md:mb-0 pl-8 md:pl-0">
                   <h1>{movie.data.attributes.title}&nbsp;</h1>
                 </div>
               </div>
