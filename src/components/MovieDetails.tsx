@@ -6,6 +6,7 @@ import { MovieApiResponse } from "../fetchers/fetchMovies"
 import Modal from "./Modal"
 import { FaPlay, FaEdit } from "react-icons/fa"
 import MovieForm from "./MovieForm"
+import { AiOutlineHome } from "react-icons/ai"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const [showMovieForm, setShowMovieForm] = useState(false)
@@ -31,29 +32,40 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           className={`w-full h-full absolute top-0 left-0 bg-[#0a123d] opacity-90`}
         ></div>
         <div className="w-full md:pl-10 absolute top-0 left-0">
-          <button type="button" onClick={() => router.back()}>
-            <p className="text-white pl-5 pt-5">Back to home</p>
-          </button>
+          <div className="flex justify-center md:justify-start">
+            <button
+              type="button"
+              onClick={() => router.back()}
+              className="mt-5 mb-5 md:mb-0 md:ml-3 border hover:bg-[#e0e0e0] transition duration-500 rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#232323]"
+            >
+              <div className="flex items-center">
+                <div className="mr-1">
+                  <AiOutlineHome />
+                </div>
+                <p>Home</p>
+              </div>
+            </button>
+          </div>
           <div className="flex flex-col items-center md:flex-row md:items-start md:w-full">
             <div className="flex opacity-100">
-              <div className="flex justify-center mb-3 mx-3 object-contain h-auto md:mt-5">
+              <div className="flex justify-center mb-3 mx-8 md:mx-3 object-contain h-auto md:mt-5">
                 <Image
                   src={movie.data.attributes.imageUrl}
                   alt={movie.data.attributes.title}
                   className="rounded-md opacity-100"
-                  width={380}
+                  width={360}
                   height={500}
                 />
               </div>
             </div>
-            <div className="flex grow flex-col pb-20 md:pt-5 md:pb-5 md:pl-5 md:w-2/3">
+            <div className="flex grow flex-col pb-20 md:pt-5 md:pb-5 md:pl-5 md:w-2/3 ">
               <div className="flex text-white font-bold text-2xl md:text-4xl lg:text-5xl justify-center md:justify-start">
                 <div className="">
                   <h1>{movie.data.attributes.title}&nbsp;</h1>
                 </div>
-                <div>
-                  <h1>({movie.data.attributes.year})</h1>
-                </div>
+              </div>
+              <div className="flex justify-center md:justify-start text-white">
+                <h1>({movie.data.attributes.year})</h1>
               </div>
               <div className="text-white flex text-center py-5 justify-center md:justify-start">
                 {movie.data.attributes.genres.map((genre) => (
