@@ -30,6 +30,8 @@ Current API Functionality includes:
 
 For Authentication, I used Next Auth and implemented Social Login for Google and GitHub account users.
 
+The backend or Strapi API has been deployed to Heroku with a Postgres Database. The frontend has been deployed to Vercel.
+
 # **Tech Stack** 🚀
 
 - React
@@ -41,6 +43,9 @@ For Authentication, I used Next Auth and implemented Social Login for Google and
 - React Testing Library
 - Cypress
 - GitLab
+- Postgres
+- Heroku
+- Vercel
 
 # **Next Steps** 🎯
 
@@ -50,15 +55,13 @@ For Authentication, I used Next Auth and implemented Social Login for Google and
 
 - Form fields validation.
 
-- Web Accessibility for screen readers, checks on headings, lists, links, site navigation, images, form validation.
+- Improvements to Web Accessibility, Performance, SEO, Best Practices etc. Use Lighthouse to generate a report.
 
 - Unit & Integration tests using React Testing Library
 
 - Cypress E2E tests.
 
 - Gitlab CI/CD Pipeline.
-
-- Deployment on AWS.
 
 # **Screenshots** ⭐️
 
@@ -94,3 +97,8 @@ For Authentication, I used Next Auth and implemented Social Login for Google and
 
 **Testing API with Insomnia:**
 <img src="./src/styles/images/insomnia-api-testing.png" width="1200">
+
+</br>
+
+**Lighthouse Score:**
+<img src="./src/styles/images/lighthouse.png" width="1200">
