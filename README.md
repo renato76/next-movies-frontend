@@ -10,17 +10,18 @@ yarn
 yarn dev
 
 ```
+
 # **Next Movies**
 
 # **Overview** ☀️
 
 I set this project up using Next JS, TypeScript and React JS for the frontend, which consumes an API created with Strapi Headless CMS.
 
-I used React Query for fetching data from the API. 
+I used React Query for fetching data from the API.
 
 I used Formik to create the form for adding / updating a movie.
 
-Current API Functionality includes: 
+Current API Functionality includes:
 
 - read all
 - read one
@@ -61,37 +62,35 @@ For Authentication, I used Next Auth and implemented Social Login for Google and
 
 # **Screenshots** ⭐️
 
-**Homepage:** 
+**Homepage:**
 <img src="./src/styles/images/homepage.png" width="1200">
 
 </br>
 
-**Movie Details:** 
+**Movie Details:**
 <img src="./src/styles/images/movie-details.png" width="1200">
 
 </br>
 
-**Add a Movie Form:** 
+**Add a Movie Form:**
 <img src="./src/styles/images/create-movie.png" width="1200">
 
 </br>
 
-**Naxt Auth:** 
+**Naxt Auth:**
 <img src="./src/styles/images/next-auth.png" width="1200">
 
 </br>
 
-**React Query:** 
+**React Query:**
 <img src="./src/styles/images/react-query.png" width="1200">
 
 </br>
 
-**Strapi API:** 
+**Strapi API:**
 <img src="./src/styles/images/strapi-api.png" width="1200">
 
 </br>
 
 **Testing API with Insomnia:**
 <img src="./src/styles/images/insomnia-api-testing.png" width="1200">
-
-
