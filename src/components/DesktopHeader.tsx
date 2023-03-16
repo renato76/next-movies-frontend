@@ -1,17 +1,25 @@
 import { FC } from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from "next/router"
+import Image from "next/image"
 
-const Header: FC = () => {
+const DesktopHeader: FC = () => {
   const { data: session } = useSession()
   const router = useRouter()
   const isOnCreateMoviePage = router.asPath === "/create-movie"
-
   return (
-    <header className="sticky text-white top-0 z-[1000] flex justify-center sm:justify-end items-center px-4 md:px-6 h-[72px]">
-      <div>
+    <>
+      <div className="flex justify-between items-center py-2 text-white px-6">
+        <div className="hidden md:flex">
+          <Image
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg"
+            alt="tmdb logo"
+            width={300}
+            height={50}
+          />
+        </div>
         {session && (
-          <div className="flex my-2">
+          <div className="hidden md:flex my-2">
             <div className="space-x-2">
               {!isOnCreateMoviePage && (
                 <>
@@ -19,13 +27,13 @@ const Header: FC = () => {
                     onClick={() => {
                       router.push("/create-movie")
                     }}
-                    className="px-4 md:px-12 py-2 bg-[#334ae3] hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer"
+                    className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4]  hover:bg-[#01b4e4] transition duration-700 ease-in-out rounded-lg cursor-pointer"
                   >
-                    <p>Create Movie</p>
+                    <p>Add Movie</p>
                   </button>
                   <button
                     onClick={() => signOut()}
-                    className="px-4 md:px-12 py-2 bg-[#334ae3] hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer"
+                    className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
                   >
                     <p>Sign out</p>
                   </button>
@@ -37,7 +45,7 @@ const Header: FC = () => {
                     onClick={() => {
                       router.push("/")
                     }}
-                    className="px-4 md:px-12 py-2 bg-[#334ae3] hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer"
+                    className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4]  hover:bg-[#01b4e4] transition duration-700 ease-in-out rounded-lg cursor-pointer"
                   >
                     <p>Home</p>
                   </button>
@@ -47,7 +55,7 @@ const Header: FC = () => {
                         callbackUrl: "/",
                       })
                     }
-                    className="px-4 md:px-12 py-2 bg-[#334ae3] hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer"
+                    className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
                   >
                     <p>Sign out</p>
                   </button>
@@ -59,14 +67,14 @@ const Header: FC = () => {
         {!session && (
           <button
             onClick={() => signIn()}
-            className="px-12 py-2 bg-[#334ae3] hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer"
+            className="px-12 py-2 my-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
           >
             Sign in
           </button>
         )}
       </div>
-    </header>
+    </>
   )
 }
 
-export default Header
+export default DesktopHeader

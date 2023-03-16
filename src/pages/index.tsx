@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
-import Header from "../components/Header"
+import Header from "../components/HeaderContainer"
 import { useQuery } from "react-query"
 import { fetchAllMovies } from "../fetchers/fetchMovies"
 import Link from "next/link"
@@ -35,18 +35,15 @@ const HomePage = () => {
           <FadeLoader color="#36d7b7" />
         </div>
       ) : (
-        <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] pb-20">
-          <div className="flex justify-center pt-8">
-            <h1 className="text-4xl text-bold text-white">Next Movies</h1>
-          </div>
+        <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] h-[900px] lg:h-full md:pb-20">
           <div className="flex flex-col py-5 overflow-x-scroll">
-            <h2 className="text-white ml-5 mb-2">ALL MOVIES</h2>
+            <h2 className="text-white ml-5">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll overflow-y-hidden px-3">
               {allMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
-                  className="px-[5px]"
+                  className="px-[6px] py-5"
                 >
                   <div className="object-contain w-48">
                     <Image
@@ -62,13 +59,13 @@ const HomePage = () => {
             </div>
           </div>
           <div className="flex flex-col py-5">
-            <h2 className="text-white ml-5 mb-2">ACTION MOVIES</h2>
+            <h2 className="text-white ml-5">ACTION MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll overflow-y-hidden px-3">
               {actionMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
-                  className="px-1"
+                  className="px-[6px] py-5"
                 >
                   <div className="object-contain w-48 h-full">
                     <Image
