@@ -36,7 +36,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             <button
               type="button"
               onClick={() => router.back()}
-              className="mt-5 mb-5 ml-8 md:mb-0 md:ml-3 border hover:bg-[#e0e0e0] rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#0a123d] transition duration-700 ease-in-out"
+              className="mt-5 mb-5 ml-8 md:mb-0 md:ml-[13px] border hover:bg-[#e0e0e0] rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#0a123d] transition duration-700 ease-in-out"
             >
               <div className="flex items-center">
                 <div className="mr-1">
