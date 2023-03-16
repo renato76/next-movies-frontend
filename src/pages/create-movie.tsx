@@ -1,5 +1,5 @@
 import { useSession, signIn } from "next-auth/react"
-import Header from "@/components/Header"
+import HeaderContainer from "@/components/HeaderContainer"
 import MovieForm from "@/components/MovieForm"
 
 export interface CreateMovieApiRequest {
@@ -35,7 +35,7 @@ const CreateMovie = () => {
   return (
     <>
       <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
-        <Header />
+        <HeaderContainer />
       </div>
       {!session && (
         <div className="text-center pt-8 pb-20 h-screen bg-gradient-to-r from-[#252242] to-[#0f0d23]">

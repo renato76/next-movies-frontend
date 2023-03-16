@@ -90,7 +90,7 @@ const MovieForm = ({ data, id }: MovieProps) => {
         >
           {(formik) => (
             <>
-              <div className="flex w-5/6 m-auto justify-center mt-6 md:max-w-[550px] text-start rounded-lg md:px-5 py-6 bg-[#f3f3f3]">
+              <div className="flex w-5/6 m-auto justify-center mt-6 md:max-w-[550px] text-start rounded-lg px-5 py-6 bg-[#f3f3f3]">
                 <Form>
                   <div className="flex flex-col">
                     <div className="">

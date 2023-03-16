@@ -4,8 +4,8 @@ import { useSession } from "next-auth/react"
 import Image from "next/image"
 import { MovieApiResponse } from "../fetchers/fetchMovies"
 import Modal from "./Modal"
-import { FaPlay, FaEdit } from "react-icons/fa"
 import MovieForm from "./MovieForm"
+import { FaPlay, FaEdit } from "react-icons/fa"
 import { AiOutlineHome } from "react-icons/ai"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
@@ -18,8 +18,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
   }
 
   return (
-    <div className="h-[1500px] md:h-screen overflow-y-scroll pb-20 md:pb-0">
-      <div className="h-full w-full relative">
+    <div className="h-[1400px] md:h-screen overflow-y-scroll md:pb-0">
+      <div className="h-[1400px] lg:h-full w-ful relative">
         <Image
           src={movie.data.attributes.backdropUrl}
           alt={movie.data.attributes.title}
@@ -32,11 +32,11 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           className={`w-full h-full absolute top-0 left-0 bg-[#0a123d] opacity-90`}
         ></div>
         <div className="w-full md:pl-10 absolute top-0 left-0">
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-start">
             <button
               type="button"
               onClick={() => router.back()}
-              className="mt-5 mb-5 md:mb-0 md:ml-3 border hover:bg-[#e0e0e0] transition duration-500 rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#0a123d]"
+              className="mt-5 mb-5 ml-8 md:mb-0 md:ml-3 border hover:bg-[#e0e0e0] rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#0a123d] transition duration-700 ease-in-out"
             >
               <div className="flex items-center">
                 <div className="mr-1">
@@ -100,14 +100,14 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                   {movie.data.attributes.description}
                 </p>
               </div>
-              <div className="text-white flex flex-col items-start pl-8 md:pl-0 pb-8">
+              <div className="text-white hover:text-[#01b4e4] transition duration-500 flex flex-col items-start pl-8 md:pl-0 pb-8">
                 <a
                   className="cursor-pointer flex items-center"
                   href={movie.data.attributes.trailer}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FaPlay color={"white"} />
+                  <FaPlay />
                   <p className="flex items-center ml-4">Play Trailer</p>
                 </a>
               </div>

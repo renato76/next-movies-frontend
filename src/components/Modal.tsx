@@ -48,7 +48,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
             </span>
           </button>
         </div>
-        <div className="p-8 pt-2">
+        <div className="md:p-8 pt-2">
           {title && <h2 className="text-center font-bold text-2xl">{title}</h2>}
           {children}
         </div>
