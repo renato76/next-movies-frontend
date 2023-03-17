@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
-import Header from "../components/HeaderContainer"
+import HeaderContainer from "../components/HeaderContainer"
 import { useQuery } from "react-query"
 import { fetchAllMovies } from "../fetchers/fetchMovies"
 import Link from "next/link"
@@ -26,8 +26,8 @@ const HomePage = () => {
       <Head>
         <title>Next Movies</title>
       </Head>
-      <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
-        <Header />
+      <div className="bg-[#161616] border-b border-[#89898942]">
+        <HeaderContainer />
       </div>
       {error && <div>There is an error, please try again</div>}
       {isLoading ? (
@@ -35,21 +35,21 @@ const HomePage = () => {
           <FadeLoader color="#36d7b7" />
         </div>
       ) : (
-        <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] h-[900px] lg:h-full md:pb-20 overflow-y-scroll">
+        <div className="bg-[#161616] min-h-[900px] md:pb-20 overflow-y-scroll">
           <div className=" flex flex-col py-5 overflow-x-scroll">
-            <h2 className="text-white ml-5">ALL MOVIES</h2>
-            <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
+            <h2 className="text-white ml-5 font-Quicksand">ALL MOVIES</h2>
+            <div className="relative flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
               {allMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
-                  className="px-[6px] py-5"
+                  className="px-[8px] py-2 md:py-4 last:pr-24"
                 >
                   <div className="object-contain w-48">
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
-                      className="rounded-md hover:scale-105 transition duration-500"
+                      className="rounded-md hover:scale-105 md:hover:scale-110 transition duration-500"
                       width={220}
                       height={120}
                     />
@@ -57,21 +57,22 @@ const HomePage = () => {
                 </Link>
               ))}
             </div>
+            <div className="absolute top-[134px] right-0 bg-gradient-to-l from-[#a7a4bf] h-[300px] w-1/12" />
           </div>
           <div className="flex flex-col py-5">
-            <h2 className="text-white ml-5">ACTION MOVIES</h2>
-            <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
+            <h2 className="text-white ml-5 font-Quicksand">ACTION MOVIES</h2>
+            <div className="relative flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
               {actionMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
-                  className="px-[6px] py-5"
+                  className="px-[8px] py-2 md:py-4 last:pr-24"
                 >
                   <div className="object-contain w-48 h-full">
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
-                      className="rounded-md hover:scale-105 transition duration-500"
+                      className="rounded-md hover:scale-105 md:hover:scale-110 transition duration-500"
                       width={220}
                       height={120}
                     />
@@ -80,6 +81,7 @@ const HomePage = () => {
               ))}
             </div>
           </div>
+          <div className="absolute top-[525px] right-0 bg-gradient-to-l from-[#a7a4bf] h-[300px] w-1/12" />
         </div>
       )}
     </>
