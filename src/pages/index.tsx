@@ -35,7 +35,7 @@ const HomePage = () => {
           <FadeLoader color="#36d7b7" />
         </div>
       ) : (
-        <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] h-[900px] lg:h-full md:pb-20 overflow-y-scroll">
+        <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] h-[900px] md:pb-20 overflow-y-scroll">
           <div className=" flex flex-col py-5 overflow-x-scroll">
             <h2 className="text-white ml-5">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">

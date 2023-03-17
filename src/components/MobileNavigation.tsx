@@ -20,7 +20,7 @@ const MobileNavigation = ({ isOpen, setIsOpen }: Props) => {
   }
   return (
     <>
-      <div className="absolute top-0 left-0 h-[1000px] w-full bg-[#252242] px-6 py-2">
+      <div className="absolute top-0 left-0 h-[1000px] w-full bg-[#0f0d23] px-6 py-2">
         <div className="flex flex-col">
           <div onClick={handleClick} className="text-3xl font-bold mb-6 mt-2">
             <AiOutlineClose />
