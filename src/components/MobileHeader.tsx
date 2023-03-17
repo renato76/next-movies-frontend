@@ -11,7 +11,7 @@ const MobileHeader: FC = () => {
   }
 
   return (
-    <div className="relative flex justify-between items-center text-white py-[22px] px-4">
+    <div className="relative flex justify-between items-center text-white py-4 px-4">
       <div onClick={handleClick} className="text-3xl">
         <GiHamburgerMenu />
       </div>
