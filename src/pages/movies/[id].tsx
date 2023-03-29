@@ -18,7 +18,7 @@ const Movie = ({ movie }: MovieApiResponse) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies/${params?.id}`
+    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies/${params?.id}?populate=*`
   )
   const movie: MovieApiResponse = await res.json()
 

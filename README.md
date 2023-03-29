@@ -80,8 +80,8 @@ The backend or Strapi API has been deployed to Heroku with a Postgres Database. 
 
 </br>
 
-**Naxt Auth:**
-<img src="./src/styles/images/next-auth.png" width="1200">
+**Sign In Form:**
+<img src="./src/styles/images/signin.png" width="1200">
 
 </br>
 

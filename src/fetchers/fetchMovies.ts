@@ -11,27 +11,27 @@ export interface AllMoviesApiResponse {
     genres: string[]
     imageUrl: string
     backdropUrl: string
+    reviews?: {
+      data: [
+        {
+          id: 1,
+          attributes: {
+            review: string,
+            reviewer: string,
+            rating: number,
+            movie: string,
+            createdAt: string,
+          }
+        }
+      ]
+    }
   }
 }
 
 export interface MovieApiResponse {
   movie: {
-    data: {
-      id?: string
-      attributes: {
-        title: string
-        description: string
-        starring: string
-        duration: string
-        ageRating: string
-        year: string
-        trailer: string
-        genres: string[]
-        imageUrl: string
-        backdropUrl: string
-      }
+    data: AllMoviesApiResponse
     }
-  }
 }
 
 export const fetchAllMovies = async (): Promise<AllMoviesApiResponse[]> => {

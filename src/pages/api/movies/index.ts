@@ -6,7 +6,7 @@ function fetchMovies(req: NextApiRequest, res: NextApiResponse) {
     req,
     res,
     "GET",
-    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies?populate=*`
+    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies?populate[reviews][populate][0]=user`
   )
 }
 

@@ -47,16 +47,14 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
             </button>
           </div>
           <div className="flex flex-col items-center md:flex-row md:items-start md:w-full">
-            <div className="flex opacity-100">
-              <div className="flex justify-center mb-3 mx-8 md:mx-3 object-contain h-auto md:mt-5">
-                <Image
-                  src={movie.data.attributes.imageUrl}
-                  alt={movie.data.attributes.title}
-                  className="rounded-md opacity-100"
-                  width={360}
-                  height={500}
-                />
-              </div>
+            <div className="flex justify-center mb-3 mx-8 md:mx-3 object-contain h-auto md:mt-5">
+              <Image
+                src={movie.data.attributes.imageUrl}
+                alt={movie.data.attributes.title}
+                className="rounded-md opacity-100"
+                width={360}
+                height={500}
+              />
             </div>
             <div className="flex grow flex-col pb-20 md:pt-5 md:pb-5 md:pl-5 md:w-2/3 ">
               <div className="flex text-white font-bold text-2xl md:text-4xl lg:text-5xl justify-center md:justify-start">

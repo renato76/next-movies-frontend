@@ -1,12 +1,29 @@
-import { FC } from "react"
-import { useSession, signIn, signOut } from "next-auth/react"
+import { FC, useEffect, useState, useCallback } from "react"
+import { useSession, signOut } from "next-auth/react"
+import { unsetToken } from "../lib/auth"
+import { parseCookies } from "nookies"
 import { useRouter } from "next/router"
 import Image from "next/image"
 
 const DesktopHeader: FC = () => {
+  const [userIsLoggedIn, setUserIsLoggedIn] = useState(false)
   const { data: session } = useSession()
   const router = useRouter()
   const isOnCreateMoviePage = router.asPath === "/create-movie"
+  const cookies = parseCookies()
+
+  const isLoggedIn = useCallback(() => {
+    if (cookies.jwt) {
+      setUserIsLoggedIn(true)
+    } else {
+      setUserIsLoggedIn(false)
+    }
+  }, [cookies.jwt])
+
+  useEffect(() => {
+    isLoggedIn()
+  }, [isLoggedIn] )
+
   return (
     <>
       <div className="flex justify-between items-center py-2 text-white px-6">
@@ -18,7 +35,7 @@ const DesktopHeader: FC = () => {
             height={50}
           />
         </div>
-        {session && (
+        {(session || userIsLoggedIn) && (
           <div className="hidden md:flex my-2">
             <div className="space-x-2">
               {!isOnCreateMoviePage && (
@@ -32,7 +49,12 @@ const DesktopHeader: FC = () => {
                     <p>Add Movie</p>
                   </button>
                   <button
-                    onClick={() => signOut()}
+                    onClick={() => {
+                      signOut({
+                        callbackUrl: "/",
+                      })
+                      unsetToken()
+                    }}
                     className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
                   >
                     <p>Sign out</p>
@@ -50,11 +72,12 @@ const DesktopHeader: FC = () => {
                     <p>Home</p>
                   </button>
                   <button
-                    onClick={() =>
+                    onClick={() => {
                       signOut({
                         callbackUrl: "/",
                       })
-                    }
+                      unsetToken()
+                    }}
                     className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
                   >
                     <p>Sign out</p>
@@ -64,9 +87,9 @@ const DesktopHeader: FC = () => {
             </div>
           </div>
         )}
-        {!session && (
+        {!session && !userIsLoggedIn && (
           <button
-            onClick={() => signIn()}
+            onClick={() => router.push("/auth/signin")}
             className="px-12 py-2 my-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
           >
             Sign in
