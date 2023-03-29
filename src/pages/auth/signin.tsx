@@ -7,6 +7,7 @@ import type {
 import { getProviders, signIn } from "next-auth/react"
 import { getServerSession } from "next-auth/next"
 import authOptions from "../api/auth/[...nextauth]"
+import HeaderContainer from "@/components/HeaderContainer"
 import { setToken } from "@/lib/auth"
 import { FcGoogle } from "react-icons/fc"
 import { BsGithub } from "react-icons/bs"
@@ -28,7 +29,7 @@ export default function SignIn<ApiResponse>({
         {
           method: "POST",
           headers: {
-            "Accept": "application/json",
+            Accept: "application/json",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -39,7 +40,7 @@ export default function SignIn<ApiResponse>({
       )
       const userData = (await response.json()) as ApiResponse
       setToken(userData)
-      router.push('/')
+      router.push("/")
     } catch (err) {
       throw new Error(`${err}`)
     }
@@ -47,7 +48,10 @@ export default function SignIn<ApiResponse>({
 
   return (
     <>
-      <div className="bg-gradient-to-tr from-[#252242] to-[#0f0d23] h-screen py-20 overflow-y-scroll px-4">
+      <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
+        <HeaderContainer />
+      </div>
+      <div className="bg-gradient-to-tr from-[#252242] to-[#0f0d23] h-screen py-10 overflow-y-scroll px-4">
         <div className="max-w-md my-0 mx-auto">
           <div className="flex flex-col items-center pt-6 border h-[650px] md:h-[550px] rounded-lg bg-[#ededed]">
             <div>
@@ -90,19 +94,23 @@ export default function SignIn<ApiResponse>({
                   placeholder="email adddress"
                   className="mt-4 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7]"
                   type="text"
-                  onChange={(e) => setData({
-                    ...data,
-                    identifier: e.target.value,
-                  })}
+                  onChange={(e) =>
+                    setData({
+                      ...data,
+                      identifier: e.target.value,
+                    })
+                  }
                 />
                 <input
                   placeholder="password"
                   className="mt-4 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7] relative"
                   type="password"
-                  onChange={(e) => setData({
-                    ...data,
-                    password: e.target.value,
-                  })}
+                  onChange={(e) =>
+                    setData({
+                      ...data,
+                      password: e.target.value,
+                    })
+                  }
                 />
                 <button className="px-4 md:px-12 py-2 mt-4 w-full max-w-[330px] text-white border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer">
                   Sign In
@@ -122,7 +130,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   // Note: Make sure not to redirect to the same page
   // To avoid an infinite loop!
   if (session) {
-
     return { redirect: { destination: "/" } }
   }
 

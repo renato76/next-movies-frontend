@@ -28,7 +28,7 @@ Current API Functionality includes:
 - create one
 - update one
 
-For Authentication, I used Next Auth and implemented Social Login for Google and GitHub account users.
+For Authentication, I used Next Auth and implemented Email Authentication, plus Social Login for Google and GitHub account users. The login feature obtains a JWT Token from Strapi and stores this in either Next Auth Session for Social login or in Cookies for Email login.
 
 The backend or Strapi API has been deployed to Heroku with a Postgres Database. The frontend has been deployed to Vercel.
 
@@ -49,7 +49,9 @@ The backend or Strapi API has been deployed to Heroku with a Postgres Database. 
 
 # **Next Steps** 🎯
 
-- The plan is to have full CRUD functionality, so I will be adding "Delete a movie" functionality which will only be available to Authorized and Authenitcated users. I will add JWT token to the Headers in the fetch and modify the Strapi API to receive requests in such way.
+- Reviews Section displaying user reviews.
+
+- Add a Review feature available for authenticated users.
 
 - Refactor to use Next JS 13 Server / Client Components.
 

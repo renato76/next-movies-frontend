@@ -10,7 +10,7 @@ import { AiOutlineHome } from "react-icons/ai"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const [showMovieForm, setShowMovieForm] = useState(false)
-  const { data: session } = useSession()
+  const { data: session }: any = useSession()
   const router = useRouter()
 
   const handleEditMovie = () => {
