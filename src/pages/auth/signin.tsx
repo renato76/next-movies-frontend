@@ -51,7 +51,7 @@ export default function SignIn<ApiResponse>({
       <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
         <HeaderContainer />
       </div>
-      <div className="bg-gradient-to-tr from-[#252242] to-[#0f0d23] h-screen py-10 overflow-y-scroll px-4">
+      <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] h-screen py-10 overflow-y-scroll px-4">
         <div className="max-w-md my-0 mx-auto">
           <div className="flex flex-col items-center pt-6 border h-[650px] md:h-[550px] rounded-lg bg-[#ededed]">
             <div>
