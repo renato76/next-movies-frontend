@@ -29,12 +29,12 @@ const Reviews = ({ movie }: MovieApiResponse) => {
             <div className="flex flex-col items-center">
               {!review?.length!! && <h2>There are no reviews yet...</h2>}
               {(cookies.username || session) && (
-                <button
-                  className="px-12 py-2 my-6 text-white border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
+                <p
+                  className="font-bold cursor-pointer text-[#01b4e4]"
                   onClick={handleAddReview}
                 >
                   Add a Review
-                </button>
+                </p>
               )}
               {!cookies.username && !session && <p>Login to add a review</p>}
             </div>

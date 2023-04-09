@@ -26,7 +26,7 @@ const HomePage = () => {
       <Head>
         <title>Next Movies</title>
       </Head>
-      <div className="bg-[#130d37] border-b border-[#ffffff42]">
+      <div className="bg-[#1a1a1a] border-b border-[#ffffff42]">
         <Header />
       </div>
       {error && <div>There is an error, please try again</div>}
@@ -35,23 +35,32 @@ const HomePage = () => {
           <SkeletonHomepage />
         </div>
       ) : (
-        <div className="bg-[#130d37] h-[900px] md:pb-20 overflow-y-scroll">
+        <div className="bg-[#1a1a1a] h-[900px] md:pb-20 overflow-y-scroll">
           <div className=" flex flex-col py-5 overflow-x-scroll">
-            <h2 className="text-white ml-5">ALL MOVIES</h2>
+            <h2 className="text-gray-300 font-bold ml-5">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
               {allMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
-                  className="px-[6px] py-5"
+                  className="px-[6px] md:px-[8px] py-5"
                 >
-                  <div className="object-contain w-48">
+                  <div className="hidden md:block object-contain w-56">
+                    <Image
+                      src={movie.attributes.imageUrl}
+                      alt={movie.attributes.title}
+                      className="rounded-md hover:scale-110 transition duration-500"
+                      width={300}
+                      height={160}
+                    />
+                  </div>
+                  <div className="flex md:hidden object-contain w-40">
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-105 transition duration-500"
-                      width={220}
-                      height={120}
+                      width={200}
+                      height={140}
                     />
                   </div>
                 </Link>
@@ -59,21 +68,30 @@ const HomePage = () => {
             </div>
           </div>
           <div className="flex flex-col py-5">
-            <h2 className="text-white ml-5">ACTION MOVIES</h2>
+            <h2 className="text-gray-300 font-bold ml-5">ACTION MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
               {actionMovies?.map((movie) => (
                 <Link
                   key={movie.id}
                   href={`/movies/${movie.id}`}
-                  className="px-[6px] py-5"
+                  className="px-[6px] md:px-[8px] py-5"
                 >
-                  <div className="object-contain w-48 h-full">
+                  <div className="hidden md:block object-contain w-56 h-full">
+                    <Image
+                      src={movie.attributes.imageUrl}
+                      alt={movie.attributes.title}
+                      className="rounded-md hover:scale-110 transition duration-500"
+                      width={300}
+                      height={160}
+                    />
+                  </div>
+                  <div className="flex md:hidden object-contain w-40 h-full">
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-105 transition duration-500"
-                      width={220}
-                      height={120}
+                      width={200}
+                      height={140}
                     />
                   </div>
                 </Link>
