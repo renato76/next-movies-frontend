@@ -1,6 +1,8 @@
 import { useSession, signIn } from "next-auth/react"
-import HeaderContainer from "@/components/HeaderContainer"
+import { parseCookies } from "nookies"
+import HeaderContainer from "@/components/Header/HeaderContainer"
 import MovieForm from "@/components/MovieForm"
+import { isLabeledStatement } from "typescript"
 
 export interface CreateMovieApiRequest {
   id?: string
@@ -30,15 +32,19 @@ const CreateMovie = () => {
     backdropUrl: "",
   }
 
+  const cookies = parseCookies()
+
   const { data: session } = useSession()
+
+  const isLoggedIn = session || cookies.jwt
 
   return (
     <>
-      <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
+      <div className="bg-[#161616] border-b border-[#ffffff42]">
         <HeaderContainer />
       </div>
-      {!session && (
-        <div className="text-center pt-8 pb-20 h-screen bg-gradient-to-r from-[#252242] to-[#0f0d23]">
+      {!isLoggedIn && (
+        <div className="text-center pt-8 pb-20 h-screen bg-[#161616]">
           <div>
             <h2 className="text-white mt-8 text-lg">
               Please Sign In to create a movie
@@ -54,8 +60,8 @@ const CreateMovie = () => {
           </div>
         </div>
       )}
-      <div className="text-center pt-8 pb-20 h-full bg-gradient-to-r from-[#252242] to-[#0f0d23]">
-        {session && <MovieForm data={initialValues} />}
+      <div className="text-center pt-8 pb-20 h-full bg-[#161616]">
+        {isLoggedIn && <MovieForm data={initialValues} />}
       </div>
     </>
   )

@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next"
 import { useRouter } from "next/router"
 import { MovieApiResponse } from "../../fetchers/fetchMovies"
-import MovieDetails from "@/components/MovieDetails"
+import MovieDetails from "@/components/MoviePage/MovieDetails"
 import { MovieProps } from "../../components/MovieForm"
 
 const Movie = ({ movie }: MovieApiResponse) => {
@@ -18,7 +18,7 @@ const Movie = ({ movie }: MovieApiResponse) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies/${params?.id}?populate=*`
+    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies/${params?.id}?populate[reviews][populate][0]=user&populate[likedBy]=*`
   )
   const movie: MovieApiResponse = await res.json()
 

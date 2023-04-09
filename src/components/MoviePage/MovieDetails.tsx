@@ -1,25 +1,28 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { useSession } from "next-auth/react"
+import { parseCookies } from "nookies"
 import Image from "next/image"
-import { MovieApiResponse } from "../fetchers/fetchMovies"
-import Modal from "./Modal"
-import MovieForm from "./MovieForm"
+import { MovieApiResponse } from "../../fetchers/fetchMovies"
+import Modal from "../Modal"
+import MovieForm from "../MovieForm"
 import { FaPlay, FaEdit } from "react-icons/fa"
 import { AiOutlineHome } from "react-icons/ai"
+import Reviews from "./Reviews"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const [showMovieForm, setShowMovieForm] = useState(false)
   const { data: session }: any = useSession()
+  const cookies = parseCookies()
+  const isLoggedIn = session || cookies.jwt
   const router = useRouter()
 
   const handleEditMovie = () => {
     setShowMovieForm(true)
   }
-
   return (
-    <div className="h-[1400px] md:h-screen overflow-y-scroll md:pb-0">
-      <div className="h-[1400px] lg:h-full w-ful relative">
+    <>
+      <div className="h-[1400px] sm:h-[1200px] md:h-[900px] lg:h-[700px] w-full relative">
         <Image
           src={movie.data.attributes.backdropUrl}
           alt={movie.data.attributes.title}
@@ -35,7 +38,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           <div className="flex justify-start">
             <button
               type="button"
-              onClick={() => router.back()}
+              onClick={() => router.push("/")}
               className="mt-5 mb-5 ml-8 md:mb-0 md:ml-[13px] border hover:bg-[#e0e0e0] rounded-lg cursor-pointer px-3 py-1 text-white hover:text-[#0a123d] transition duration-700 ease-in-out"
             >
               <div className="flex items-center">
@@ -56,7 +59,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 height={500}
               />
             </div>
-            <div className="flex grow flex-col pb-20 md:pt-5 md:pb-5 md:pl-5 md:w-2/3 ">
+            <div className="flex grow flex-col pb-20 md:pt-5 md:pb-5 md:pl-5 md:w-2/3">
               <div className="flex text-white font-bold text-2xl md:text-4xl lg:text-5xl justify-center md:justify-start">
                 <div className="pr-12 mb-2 md:mb-0 pl-8 md:pl-0">
                   <h1>{movie.data.attributes.title}&nbsp;</h1>
@@ -83,7 +86,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
               </div>
               <div className="text-white flex pt-5 justify-between items-center mb-2">
                 <h3 className="font-bold text-xl pl-8 md:pl-0">Overview</h3>
-                {session && (
+                {isLoggedIn && (
                   <div
                     className="text-white flex mr-20 pb-2 cursor-pointer"
                     onClick={handleEditMovie}
@@ -98,7 +101,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                   {movie.data.attributes.description}
                 </p>
               </div>
-              <div className="text-white hover:text-[#01b4e4] transition duration-500 flex flex-col items-start pl-8 md:pl-0 pb-8">
+              <div className="flex flex-col text-white items-start pl-8 md:pl-0 pb-8">
                 <a
                   className="cursor-pointer flex items-center"
                   href={movie.data.attributes.trailer}
@@ -106,7 +109,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                   rel="noreferrer"
                 >
                   <FaPlay />
-                  <p className="flex items-center ml-4">Play Trailer</p>
+                  <p className="flex items-center hover:text-[#01b4e4] transition duration-500 ml-4">Play Trailer</p>
                 </a>
               </div>
               <div className="text-white flex flex-col pl-8 md:pl-0">
@@ -130,7 +133,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           )}
         </div>
       </div>
-    </div>
+      <Reviews movie={movie} />
+    </>
   )
 }
 

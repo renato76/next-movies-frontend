@@ -12,12 +12,13 @@ import { setToken } from "@/lib/auth"
 import { FcGoogle } from "react-icons/fc"
 import { BsGithub } from "react-icons/bs"
 
-export default function SignIn<ApiResponse>({
+export default function Register<ApiResponse>({
   providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter()
   const [data, setData] = useState({
-    identifier: "",
+    username: "",
+    email: "",
     password: "",
   })
 
@@ -25,7 +26,7 @@ export default function SignIn<ApiResponse>({
     event.preventDefault()
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/auth/local`,
+        `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/auth/local/register`,
         {
           method: "POST",
           headers: {
@@ -33,7 +34,8 @@ export default function SignIn<ApiResponse>({
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            identifier: data?.identifier,
+            username: data?.username,
+            email: data?.email,
             password: data?.password,
           }),
         }
@@ -53,9 +55,11 @@ export default function SignIn<ApiResponse>({
       </div>
       <div className="bg-[#161616] h-screen py-10 overflow-y-scroll px-4">
         <div className="max-w-md my-0 mx-auto">
-          <div className="flex flex-col items-center pt-6 border h-[650px] md:h-[550px] rounded-lg bg-[#ededed]">
+          <div className="flex flex-col items-center pt-6 border h-[650px] md:h-[620px] rounded-lg bg-[#ededed]">
             <div>
-              <h1 className="text-4xl font-bold mb-10 text-gray-700">Login</h1>
+              <h1 className="text-4xl font-bold mb-10 text-gray-700">
+                Register
+              </h1>
             </div>
             {Object.values(providers).map((provider) => (
               <div key={provider.name} className=" my-1 w-full px-4">
@@ -71,7 +75,7 @@ export default function SignIn<ApiResponse>({
                   ) : (
                     <BsGithub className="mr-2 text-xl" />
                   )}{" "}
-                  Sign in with {provider.name}
+                  Register with {provider.name}
                 </button>
               </div>
             ))}
@@ -84,20 +88,31 @@ export default function SignIn<ApiResponse>({
                 <div className="flex-grow h-px bg-gray-400"></div>
               </div>
               <h2 className="font-bold text-xl flex justify-center mb-2 text-gray-700">
-                Sign in with email
+                Register with email
               </h2>
               <form
                 className="flex flex-col items-center w-full px-4"
                 onSubmit={handleSubmit}
               >
                 <input
-                  placeholder="email adddress"
+                  placeholder="username"
                   className="mt-4 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7]"
                   type="text"
                   onChange={(e) =>
                     setData({
                       ...data,
-                      identifier: e.target.value,
+                      username: e.target.value,
+                    })
+                  }
+                />
+                <input
+                  placeholder="email adddress"
+                  className="mt-4 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7]"
+                  type="email"
+                  onChange={(e) =>
+                    setData({
+                      ...data,
+                      email: e.target.value,
                     })
                   }
                 />
@@ -116,7 +131,15 @@ export default function SignIn<ApiResponse>({
                   Sign In
                 </button>
                 <div className="mt-3">
-                  <p>Need an Account ? <span className="cursor-pointer" onClick={() => router.push("/auth/register")}>Register here</span></p>
+                  <p>
+                    Have an Account ?{" "}
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => router.push("/auth/signin")}
+                    >
+                      Login
+                    </span>
+                  </p>
                 </div>
               </form>
             </div>

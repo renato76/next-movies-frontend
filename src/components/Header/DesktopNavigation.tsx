@@ -2,7 +2,7 @@ import { FC, useEffect, useState, useCallback } from "react"
 import { useRouter } from "next/router"
 import { useSession, signOut } from "next-auth/react"
 import { parseCookies } from "nookies"
-import { unsetToken } from "../../../lib/auth"
+import { unsetToken } from "../../lib/auth"
 
 const DesktopNavigation: FC = () => {
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(false)
@@ -78,20 +78,12 @@ const DesktopNavigation: FC = () => {
           </div>
         </div>
       )}
-      {!session && !userIsLoggedIn && !isOnSignInPage && (
+      {!session && !userIsLoggedIn && (
         <button
-          onClick={() => router.push("/auth/signin")}
+          onClick={() => router.push(`${!isOnSignInPage ? '/auth/signin' : '/'}`)}
           className="px-12 py-2 my-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
         >
-          Sign in
-        </button>
-      )}
-      {!session && !userIsLoggedIn && isOnSignInPage && (
-        <button
-          onClick={() => router.push("/")}
-          className="px-12 py-2 my-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
-        >
-          Home
+          {`${!isOnSignInPage ? 'Sign In' : 'Home'}`}
         </button>
       )}
     </>

@@ -2,7 +2,6 @@ import { parseCookies, setCookie, destroyCookie } from "nookies"
 
 export const setToken = (data: any) => {
   const cookies = parseCookies()
-  console.log("data >>", data)
 
   if (typeof window !== "undefined") {
     setCookie(null, "id", data?.user?.id, {
