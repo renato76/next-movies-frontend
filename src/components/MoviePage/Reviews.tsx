@@ -24,30 +24,22 @@ const Reviews = ({ movie }: MovieApiResponse) => {
               Reviews
             </h2>
           </div>
-          {(cookies.username || session) && (
-            <button
-              className="px-12 py-2 my-2 text-white border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
-              onClick={handleAddReview}
-            >
-              Add a Review
-            </button>
-          )}
-          {!review?.length!! && (
-            <>
-              <div className="flex flex-col items-center">
-                <h2>There are no reviews yet...</h2>
-                {(cookies.username || session) && (
-                  <button
-                    className="px-12 py-2 my-6 text-white border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
-                    onClick={handleAddReview}
-                  >
-                    Add a Review
-                  </button>
-                )}
-                {!cookies.username && !session && <p>Login to add a review</p>}
-              </div>
-            </>
-          )}
+
+          <>
+            <div className="flex flex-col items-center">
+              {!review?.length!! && <h2>There are no reviews yet...</h2>}
+              {(cookies.username || session) && (
+                <button
+                  className="px-12 py-2 my-6 text-white border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
+                  onClick={handleAddReview}
+                >
+                  Add a Review
+                </button>
+              )}
+              {!cookies.username && !session && <p>Login to add a review</p>}
+            </div>
+          </>
+
           {showReviewForm && (
             <Modal
               size="lg"

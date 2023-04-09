@@ -97,16 +97,28 @@ const MobileNavigation = ({ isOpen, setIsOpen }: Props) => {
                 )}
               </>
             ) : (
-              <div className="flex items-center border-b border-t border-[#efefef24]">
-                <div className="mr-1 ml-2 text-white text-2xl">
-                  <RiLoginBoxLine />
+              <>
+                <div className="flex items-center border-b border-t border-[#efefef24]">
+                  <div className="mr-1 ml-2 text-white text-2xl">
+                    <RiLoginBoxLine />
+                  </div>
+                  <li className="py-3">
+                    <p onClick={() => signIn()} className="ml-2">
+                      Sign In
+                    </p>
+                  </li>
                 </div>
-                <li className="py-3">
-                  <p onClick={() => signIn()} className="ml-2">
-                    Sign In
-                  </p>
-                </li>
-              </div>
+                <div className="flex items-center border-b border-t border-[#efefef24]">
+                  <div className="mr-1 ml-2 text-white text-2xl">
+                    <AiOutlineHome />
+                  </div>
+                  <li className="py-3">
+                    <p onClick={() => router.push("/")} className="ml-2">
+                      Home
+                    </p>
+                  </li>
+                </div>
+              </>
             )}
           </ul>
         </div>
