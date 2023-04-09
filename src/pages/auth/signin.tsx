@@ -48,10 +48,10 @@ export default function SignIn<ApiResponse>({
 
   return (
     <>
-      <div className="bg-[#161616] border-b border-[#ffffff42]">
+      <div className="bg-[#130d37] border-b border-[#ffffff42]">
         <HeaderContainer />
       </div>
-      <div className="bg-[#161616] h-screen py-10 overflow-y-scroll px-4">
+      <div className="bg-[#130d37] h-screen py-10 overflow-y-scroll px-4">
         <div className="max-w-md my-0 mx-auto">
           <div className="flex flex-col items-center pt-6 border h-[650px] md:h-[550px] rounded-lg bg-[#ededed]">
             <div>

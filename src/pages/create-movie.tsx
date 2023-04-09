@@ -40,11 +40,11 @@ const CreateMovie = () => {
 
   return (
     <>
-      <div className="bg-[#161616] border-b border-[#ffffff42]">
+      <div className="bg-[#130d37] border-b border-[#ffffff42]">
         <HeaderContainer />
       </div>
       {!isLoggedIn && (
-        <div className="text-center pt-8 pb-20 h-screen bg-[#161616]">
+        <div className="text-center pt-8 pb-20 h-screen bg-[#130d37]">
           <div>
             <h2 className="text-white mt-8 text-lg">
               Please Sign In to create a movie
@@ -60,7 +60,7 @@ const CreateMovie = () => {
           </div>
         </div>
       )}
-      <div className="text-center pt-8 pb-20 h-full bg-[#161616]">
+      <div className="text-center pt-8 pb-20 h-full bg-[#130d37]">
         {isLoggedIn && <MovieForm data={initialValues} />}
       </div>
     </>

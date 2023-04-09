@@ -26,16 +26,16 @@ const HomePage = () => {
       <Head>
         <title>Next Movies</title>
       </Head>
-      <div className="bg-[#161616] border-b border-[#ffffff42]">
+      <div className="bg-[#130d37] border-b border-[#ffffff42]">
         <Header />
       </div>
       {error && <div>There is an error, please try again</div>}
       {isLoading ? (
-        <div className="flex items-center justify-start bg-[#161616]">
+        <div className="flex items-center justify-start bg-[#130d37]">
           <SkeletonHomepage />
         </div>
       ) : (
-        <div className="bg-[#161616] h-[900px] md:pb-20 overflow-y-scroll">
+        <div className="bg-[#130d37] h-[900px] md:pb-20 overflow-y-scroll">
           <div className=" flex flex-col py-5 overflow-x-scroll">
             <h2 className="text-white ml-5">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
