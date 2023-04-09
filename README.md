@@ -13,6 +13,10 @@ yarn dev
 
 # **Next Movies**
 
+https://next-movies-frontend.vercel.app/
+
+</br>
+
 # **Overview** ☀️
 
 I set this project up using Next JS, TypeScript and React JS for the frontend, which consumes an API created with Strapi Headless CMS.
