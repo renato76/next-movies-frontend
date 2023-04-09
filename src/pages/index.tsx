@@ -1,10 +1,10 @@
 import Head from "next/head"
 import Image from "next/image"
-import Header from "../components/HeaderContainer"
+import Header from "../components/Header/HeaderContainer"
 import { useQuery } from "react-query"
 import { fetchAllMovies } from "../fetchers/fetchMovies"
+import SkeletonHomepage from "../components/SkeletonHomepage"
 import Link from "next/link"
-import { FadeLoader } from "react-spinners"
 
 const HomePage = () => {
   const {
@@ -26,16 +26,16 @@ const HomePage = () => {
       <Head>
         <title>Next Movies</title>
       </Head>
-      <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] border-b border-[#ffffff42]">
+      <div className="bg-[#161616] border-b border-[#ffffff42]">
         <Header />
       </div>
       {error && <div>There is an error, please try again</div>}
       {isLoading ? (
-        <div className="flex items-center justify-center">
-          <FadeLoader color="#36d7b7" />
+        <div className="flex items-center justify-start bg-[#161616]">
+          <SkeletonHomepage />
         </div>
       ) : (
-        <div className="bg-gradient-to-r from-[#252242] to-[#0f0d23] h-[900px] md:pb-20 overflow-y-scroll">
+        <div className="bg-[#161616] h-[900px] md:pb-20 overflow-y-scroll">
           <div className=" flex flex-col py-5 overflow-x-scroll">
             <h2 className="text-white ml-5">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">

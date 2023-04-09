@@ -17,10 +17,17 @@ export interface AllMoviesApiResponse {
           id: 1,
           attributes: {
             review: string,
-            reviewer: string,
             rating: number,
             movie: string,
             createdAt: string,
+            user: {
+              data: {
+                attributes: {
+                  username: string
+                  email: string
+                }
+              }
+            }
           }
         }
       ]

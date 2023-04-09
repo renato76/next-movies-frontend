@@ -1,5 +1,5 @@
 import Image from "next/image"
-import DesktopNavigation from "../DesktopNavigation"
+import DesktopNavigation from "./DesktopNavigation"
 
 const DesktopHeader = () => {
   return (
