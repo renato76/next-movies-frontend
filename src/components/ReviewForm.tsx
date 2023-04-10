@@ -49,29 +49,33 @@ const ReviewForm = ({ id, userId, setShowReviewForm }: ReviewProps) => {
         >
           {(formik) => (
             <>
-              <div className="flex w-5/6 m-auto justify-center mt-6 md:max-w-[550px] text-start rounded-lg px-5 py-6 bg-[#f3f3f3]">
+              <div className="flex w-5/6 m-auto justify-center my-6 md:max-w-[550px] text-start rounded-lg px-5 py-6 bg-[#f3f3f3]">
                 <Form>
                   <div className="flex flex-col">
                     <div className="">
                       <TextArea
-                        label="Review"
+                        label="Comment"
                         name="review"
                         type="text"
                         rows={4}
                         cols={50}
                       />
                     </div>
-                    <div>
+                    <div className="flex flex-col">
+                      <label className="ml-2 text-sm font-bold">Rating</label>
                       <input
                         type="number"
+                        min={1}
+                        max={5}
                         name="rating"
-                        placeholder="Rating Choose 1-5 "
+                        placeholder="Choose 1-5"
+                        className="p-4 w-48 mt-2"
                         onChange={formik.handleChange}
                       />
                     </div>
                   </div>
                   <button
-                    className="w-full border border-none bg-[#334ae3] text-white text-xl text-bold hover:bg-[#3b53f0] transition duration-500 rounded-lg cursor-pointer mt-5 px-12 py-3"
+                    className="px-4 md:px-12 py-4 mt-6 w-full text-white border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
                     type="submit"
                   >
                     Submit

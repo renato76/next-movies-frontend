@@ -27,7 +27,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
       className="fixed top-0 left-0 right-0 bottom-0 z-[100] w-full flex items-center justify-center bg-[#1d183ca8]"
     >
       <div
-        className={`${modalSizes[size]} w-full mx-5  mt-0 h-fit max-h-[90%] overflow-y-auto rounded border-light-grey bg-[#fdfdfd] shadow-lg`}
+        className={`${modalSizes[size]} w-full mx-5  mt-0 h-fit max-h-[90%] overflow-y-auto rounded-2xl border-light-grey bg-[#fdfdfd] shadow-lg`}
       >
         <div className="mt-4 mr-4 flex justify-end">
           <button type="button" onClick={onClose}>
