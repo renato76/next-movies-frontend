@@ -11,6 +11,7 @@ import HeaderContainer from "@/components/Header/HeaderContainer"
 import { setToken } from "@/lib/auth"
 import { FcGoogle } from "react-icons/fc"
 import { BsGithub } from "react-icons/bs"
+import toast from 'react-hot-toast'
 
 export default function SignIn<ApiResponse>({
   providers,
@@ -40,6 +41,7 @@ export default function SignIn<ApiResponse>({
       )
       const userData = (await response.json()) as ApiResponse
       setToken(userData)
+      toast('You have signed in!')
       router.push("/")
     } catch (err) {
       throw new Error(`${err}`)

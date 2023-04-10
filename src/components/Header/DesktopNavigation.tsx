@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { useSession, signOut } from "next-auth/react"
 import { parseCookies } from "nookies"
 import { unsetToken } from "../../lib/auth"
+import toast from 'react-hot-toast'
 
 const DesktopNavigation: FC = () => {
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(false)
@@ -45,6 +46,7 @@ const DesktopNavigation: FC = () => {
                     signOut({
                       callbackUrl: "/",
                     })
+                    toast('Signing out...')
                     unsetToken()
                   }}
                   className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
@@ -68,6 +70,7 @@ const DesktopNavigation: FC = () => {
                     signOut({
                       callbackUrl: "/",
                     })
+                    toast('Signing out...')
                     unsetToken()
                   }}
                   className="px-4 md:px-12 py-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"

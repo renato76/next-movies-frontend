@@ -49,7 +49,7 @@ const HomePage = () => {
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
-                      className="rounded-md hover:scale-110 transition duration-500"
+                      className="rounded-md md:hover:scale-110 transition duration-500"
                       width={300}
                       height={160}
                     />
@@ -71,7 +71,7 @@ const HomePage = () => {
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
-                      className="rounded-md hover:scale-110 transition duration-500"
+                      className="rounded-md md:hover:scale-110 transition duration-500"
                       width={300}
                       height={160}
                     />

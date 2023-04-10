@@ -23,9 +23,9 @@ const SkeletonHomepage = () => {
           {Array(12)
             ?.fill(1)
             .map(() => (
-              <div className="px-[6px] py-5">
-                <div className="w-48">
-                  <div className="relative rounded-md h-[280px] bg-[#474747] flex justify-center items-end">
+              <div className="px-[6px] md:px-[8px] py-5 animate-pulse">
+                <div className="object-contain w-40 md:w-56">
+                  <div className="relative rounded-md h-[240px] md:h-[330px] bg-[#474747] flex justify-center items-end">
                     <p className="bg-[#808080] h-8 w-24 text-[#808080] mb-6 rounded-lg absolute b-4">Movie Title</p>
                   </div>
                 </div>
