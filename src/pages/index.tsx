@@ -31,7 +31,7 @@ const HomePage = () => {
       </div>
       {error && <div>There is an error, please try again</div>}
       {isLoading ? (
-        <div className="flex items-center justify-start bg-[#130d37]">
+        <div className="flex items-center justify-start bg-[#1a1a1a]">
           <SkeletonHomepage />
         </div>
       ) : (
@@ -45,22 +45,13 @@ const HomePage = () => {
                   href={`/movies/${movie.id}`}
                   className="px-[6px] md:px-[8px] py-5"
                 >
-                  <div className="hidden md:block object-contain w-56">
+                  <div className="object-contain w-40 md:w-56">
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-110 transition duration-500"
                       width={300}
                       height={160}
-                    />
-                  </div>
-                  <div className="flex md:hidden object-contain w-40">
-                    <Image
-                      src={movie.attributes.imageUrl}
-                      alt={movie.attributes.title}
-                      className="rounded-md hover:scale-105 transition duration-500"
-                      width={200}
-                      height={140}
                     />
                   </div>
                 </Link>
@@ -76,22 +67,13 @@ const HomePage = () => {
                   href={`/movies/${movie.id}`}
                   className="px-[6px] md:px-[8px] py-5"
                 >
-                  <div className="hidden md:block object-contain w-56 h-full">
+                  <div className="object-contain w-40 md:w-56 h-full">
                     <Image
                       src={movie.attributes.imageUrl}
                       alt={movie.attributes.title}
                       className="rounded-md hover:scale-110 transition duration-500"
                       width={300}
                       height={160}
-                    />
-                  </div>
-                  <div className="flex md:hidden object-contain w-40 h-full">
-                    <Image
-                      src={movie.attributes.imageUrl}
-                      alt={movie.attributes.title}
-                      className="rounded-md hover:scale-105 transition duration-500"
-                      width={200}
-                      height={140}
                     />
                   </div>
                 </Link>
