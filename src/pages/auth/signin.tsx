@@ -51,11 +51,11 @@ export default function SignIn<ApiResponse>({
       <div className="bg-[#130d37] border-b border-[#ffffff42]">
         <HeaderContainer />
       </div>
-      <div className="bg-[#130d37] h-screen py-10 overflow-y-scroll px-4">
+      <div className="bg-[#130d37] h-screen py-4 overflow-y-scroll px-4">
         <div className="max-w-md my-0 mx-auto">
-          <div className="flex flex-col items-center pt-6 border h-[650px] md:h-[550px] rounded-lg bg-[#ededed]">
+          <div className="flex flex-col items-center pt-6 border h-[590px] rounded-lg bg-[#ededed]">
             <div>
-              <h1 className="text-4xl font-bold mb-10 text-gray-700">Login</h1>
+              <h1 className="text-4xl font-bold mb-6 text-gray-700">Login</h1>
             </div>
             {Object.values(providers).map((provider) => (
               <div key={provider.name} className=" my-1 w-full px-4">
@@ -92,7 +92,7 @@ export default function SignIn<ApiResponse>({
               >
                 <input
                   placeholder="email adddress"
-                  className="mt-4 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7]"
+                  className="mt-2 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7]"
                   type="text"
                   onChange={(e) =>
                     setData({
@@ -103,7 +103,7 @@ export default function SignIn<ApiResponse>({
                 />
                 <input
                   placeholder="password"
-                  className="mt-4 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7] relative"
+                  className="mt-2 px-2 py-2 w-full max-w-[330px] text-gray-700 bg-[#ededed] border rounded-md border-[#6b6b6b] focus:outline-[#350ef7] relative"
                   type="password"
                   onChange={(e) =>
                     setData({

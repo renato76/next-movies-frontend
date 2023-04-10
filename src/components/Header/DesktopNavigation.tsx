@@ -10,6 +10,7 @@ const DesktopNavigation: FC = () => {
   const router = useRouter()
   const isOnCreateMoviePage = router.asPath === "/create-movie"
   const isOnSignInPage = router.asPath === "/auth/signin"
+  const isOnRegisterPage = router.asPath === "/auth/register"
   const cookies = parseCookies()
 
   const isLoggedIn = useCallback(() => {
@@ -80,10 +81,10 @@ const DesktopNavigation: FC = () => {
       )}
       {!session && !userIsLoggedIn && (
         <button
-          onClick={() => router.push(`${!isOnSignInPage ? '/auth/signin' : '/'}`)}
+          onClick={() => router.push(`${!isOnSignInPage || isOnRegisterPage ? '/auth/signin' : '/'}`)}
           className="px-12 py-2 my-2 border border-solid border-[#01b4e4] bg-[#01b4e4]  hover:bg-[#0099c3] transition duration-700 ease-in-out rounded-lg cursor-pointer"
         >
-          {`${!isOnSignInPage ? 'Sign In' : 'Home'}`}
+          {`${isOnSignInPage || isOnRegisterPage ? 'Home' : 'Sign In'}`}
         </button>
       )}
     </>

@@ -20,6 +20,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
   const handleEditMovie = () => {
     setShowMovieForm(true)
   }
+
   return (
     <>
       <div className="h-[1400px] sm:h-[1200px] md:h-[900px] lg:h-[700px] w-full relative">
