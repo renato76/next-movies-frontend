@@ -33,8 +33,9 @@ const ReviewForm = ({ id, userId, setShowReviewForm }: ReviewProps) => {
       userId,
       ...values,
     })
+    
     setShowReviewForm(false)
-    router.push("/")
+    router.replace(router.asPath)
   }
 
   return (
