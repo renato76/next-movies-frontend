@@ -45,7 +45,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {
       paths: [...moviePaths],
       fallback: true,
-      revalidate: 1,
     }
   } catch (err) {
     console.log("there has been an error in getStaticPaths", err)
