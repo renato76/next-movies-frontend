@@ -69,17 +69,17 @@ const Reviews = ({ movie }: MovieApiResponse) => {
                     </h3>
                     <h3 className="text-sm">
                       Written on:{" "}
-                      {moment(review.attributes.createdAt).format("Do MMM YY")}
+                      {moment(review?.attributes?.createdAt).format("Do MMM YY")}
                     </h3>
                     <div className="bg-[#01b4e4] text-sm py-[2px] w-[44px] text-white flex justify-center items-center rounded-lg mt-1">
                       <p>
-                        <span>{review.attributes.rating}.0</span>
+                        <span>{review?.attributes?.rating}.0</span>
                       </p>
                     </div>
                   </div>
                   <div className="">
                     <p className="line-clamp-8 pr-6 text-[#2f2f2f] leading-relaxed text-ellipsis overflow-hidden">
-                      {review.attributes.review}
+                      {review?.attributes?.review}
                     </p>
                   </div>
                 </div>
