@@ -31,7 +31,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
         (review) => review?.attributes?.rating
       )
       const totalRatings = allRatingsArray?.reduce((acc, curr) => acc + curr)
-      return (totalRatings!! * 20) / allRatingsArray!.length
+      return (totalRatings!! * 20 / allRatingsArray!.length).toFixed(0)
     } else {
       return 67
     }
@@ -135,7 +135,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                         Score
                       </h4>
                     </div>
-                    <div className="bg-[#343434] h-[60px] w-[60px] mr-1 flex justify-center items-center border-4 border-[#878787] rounded-full">
+                    <div className="bg-[#343434] h-[67px] w-[67px] mr-1 flex justify-center items-center border-4 border-[#878787] rounded-full">
                       <h5 className="font-bold text-2xl text-[#dbdbdb]">
                         {getAverageRating()}
                       </h5>
