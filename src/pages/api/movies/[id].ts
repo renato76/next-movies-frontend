@@ -25,7 +25,7 @@ async function updateMovie(req: NextApiRequest, res: NextApiResponse) {
     req,
     res,
     "PUT",
-    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies?populate[reviews][populate][0]=user`,
+    `${process.env.NEXT_PUBLIC_MOVIES_ENDPOINT}/movies/${id}?populate=*`,
     JSON.stringify(body)
   )
 }

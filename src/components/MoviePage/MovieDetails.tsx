@@ -93,7 +93,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 ))}
               </div>
               <div className="flex text-white items-center justify-center md:justify-start">
-                <div className="mr-2 text-center border-solid border-2 border-[#ffffffb7] px-2 py-1">
+                <div className="mr-2 text-center border-solid border-2 border-[#ffffffb7] px-2 py-0">
                   <p>{movie.data.attributes.ageRating}</p>
                 </div>
                 <span className="text-3xl">
