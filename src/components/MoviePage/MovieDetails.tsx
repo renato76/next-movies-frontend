@@ -135,15 +135,15 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                         Score
                       </h4>
                     </div>
-                    <div className="bg-[#343434] h-[67px] w-[67px] mr-1 flex justify-center items-center border-4 border-[#1ad3ae] rounded-full">
-                      <h5 className="font-bold text-2xl text-[#dbdbdb]">
+                    <div className="bg-[#343434] h-[55px] w-[55px] mr-1 flex justify-center items-center border-4 border-[#01b4e4] rounded-full">
+                      <h5 className="font-bold text-xl text-[#dbdbdb]">
                         {getAverageRating()}
                       </h5>
                       <span className="mb-2 text-[#d4d4d4] text-xs">%</span>
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col text-white items-start pl-8 md:pl-0 hover:text-[#1ad3ae] transition duration-500">
+                <div className="flex flex-col text-white items-start pl-0 md:pl-0 hover:text-[#01b4e4] transition duration-500">
                   <a
                     className="cursor-pointer flex items-center"
                     href={movie.data.attributes.trailer}
@@ -151,7 +151,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                     rel="noreferrer"
                   >
                     <FaPlay />
-                    <p className="flex items-center ml-4">
+                    <p className="flex items-center ml-2">
                       Play Trailer
                     </p>
                   </a>
