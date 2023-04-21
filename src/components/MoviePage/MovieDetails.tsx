@@ -135,8 +135,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                         Score
                       </h4>
                     </div>
-                    <div className="bg-pink-600 h-[30px] w-[60px] mr-1 flex justify-center items-center rounded-lg">
-                      <h5 className="font-bold text-xl text-[#dbdbdb]">
+                    <div className="bg-[#343434] h-[67px] w-[67px] mr-1 flex justify-center items-center border-4 border-[#1ad3ae] rounded-full">
+                      <h5 className="font-bold text-2xl text-[#dbdbdb]">
                         {getAverageRating()}
                       </h5>
                       <span className="mb-2 text-[#d4d4d4] text-xs">%</span>
