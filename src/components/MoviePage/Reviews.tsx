@@ -30,7 +30,7 @@ const Reviews = ({ movie }: MovieApiResponse) => {
               {!review?.length!! && <h2>There are no reviews yet...</h2>}
               {(cookies.username || session) && (
                 <p
-                  className="font-bold cursor-pointer text-[#2f2f2f]"
+                  className="font-bold cursor-pointer text-[#01b4e4]"
                   onClick={handleAddReview}
                 >
                   Add a Review
@@ -71,7 +71,7 @@ const Reviews = ({ movie }: MovieApiResponse) => {
                       Written on:{" "}
                       {moment(review?.attributes?.createdAt).format("Do MMM YY")}
                     </h3>
-                    <div className="bg-[#272727] text-sm py-[2px] w-[44px] text-white flex justify-center items-center rounded-lg mt-1">
+                    <div className="bg-[#01b4e4] text-sm py-[2px] w-[44px] text-white flex justify-center items-center rounded-lg mt-1">
                       <p>
                         <span>{review?.attributes?.rating}.0</span>
                       </p>
