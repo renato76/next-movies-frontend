@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useSession } from "next-auth/react"
 import { parseCookies } from "nookies"
 import ReviewForm from "../ReviewForm"
+import { FaStar } from "react-icons/fa"
 import Modal from "../Modal"
 import moment from "moment"
 
@@ -62,16 +63,21 @@ const Reviews = ({ movie }: MovieApiResponse) => {
                   <div className="pb-2 ">
                     <h3 className="font-bold text-xl text-[#2f2f2f]">
                       A review by{" "}
-                      <span className="italic">
+                      <span>
                         {" "}
                         {review?.attributes?.user?.data?.attributes?.username}
                       </span>
                     </h3>
                     <h3 className="text-sm">
                       Written on:{" "}
-                      {moment(review?.attributes?.createdAt).format("Do MMM YY")}
+                      {moment(review?.attributes?.createdAt).format(
+                        "Do MMM YY"
+                      )}
                     </h3>
-                    <div className="bg-[#2f2f2f] text-sm py-[2px] w-[44px] text-white border flex justify-center items-center rounded-lg mt-1">
+                    <div className="bg-[#2f2f2f] text-sm py-[4px] w-[60px] text-white border flex justify-center items-center rounded-lg mt-1">
+                      <span className="mr-1">
+                        <FaStar />
+                      </span>
                       <p>
                         <span>{review?.attributes?.rating}.0</span>
                       </p>

@@ -8,7 +8,7 @@ async function createReview(req: NextApiRequest, res: NextApiResponse) {
       movie,
       review,
       rating,
-      user: user,
+      user,
     },
   }
 
