@@ -2,7 +2,6 @@ import { useSession, signIn } from "next-auth/react"
 import { parseCookies } from "nookies"
 import HeaderContainer from "@/components/Header/HeaderContainer"
 import MovieForm from "@/components/MovieForm"
-import { isLabeledStatement } from "typescript"
 
 export interface CreateMovieApiRequest {
   id?: string

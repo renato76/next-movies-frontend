@@ -44,6 +44,8 @@ const Reviews = ({ movie }: MovieApiResponse) => {
           {showReviewForm && (
             <Modal
               size="lg"
+              backgroundColor="light"
+              closeButtonColor="dark"
               onClose={() => setShowReviewForm(false)}
               title="Add Review"
             >
