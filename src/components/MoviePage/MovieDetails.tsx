@@ -158,8 +158,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
               {showTrailer && (
                 <Modal
                   size="xl"
-                  backgroundColor="dark"
-                  closeButtonColor="light"
+                  theme="dark"
                   onClose={() => setShowTrailer(false)}
                 >
                   <YoutubePlayer embedId={movie.data.attributes.trailer} />
@@ -178,8 +177,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           {showMovieForm && (
             <Modal
               size="lg"
-              backgroundColor="light"
-              closeButtonColor="dark"
+              theme="light"
               onClose={() => setShowMovieForm(false)}
               title="Edit Movie"
             >

@@ -3,19 +3,15 @@ import { FC, PropsWithChildren } from "react"
 
 interface ModalProps {
   size: "sm" | "md" | "lg" | "xl"
-  backgroundColor: "light" | "dark"
-  closeButtonColor: "light" | "dark"
+  theme: "light" | "dark"
   title?: string
-  titleCenter?: boolean
   onClose: () => void
 }
 
 const Modal: FC<PropsWithChildren<ModalProps>> = ({
   size,
-  backgroundColor,
-  closeButtonColor,
+  theme,
   title = undefined,
-  titleCenter = false,
   onClose,
   children,
 }) => {
@@ -26,23 +22,17 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
     xl: "max-w-4xl",
   }
 
-  const bgColor = {
-    light: "bg-[#fdfdfd]",
-    dark: "bg-[#000]",
-  }
-
-  const closeButton = {
-    light: "#fff",
-    dark: "#021546",
-  }
-
   return (
     <div
       aria-modal
       className="fixed top-0 left-0 right-0 bottom-0 z-[100] w-full flex items-center justify-center bg-[#1d183ca8]"
     >
       <div
-        className={`${modalSizes[size]} w-full mx-5  mt-0 h-fit max-h-[90%] overflow-y-auto rounded-2xl border-light-grey ${bgColor[backgroundColor]} shadow-lg`}
+        className={`${
+          modalSizes[size]
+        } w-full mx-5  mt-0 h-fit max-h-[90%] overflow-y-auto rounded-2xl border-light-grey bg-${
+          theme === "light" ? "[#fdfdfd]" : "[#000]"
+        } shadow-lg`}
       >
         <div className="mt-4 mr-4 flex justify-end">
           <button type="button" onClick={onClose}>
@@ -57,7 +47,7 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
                   data-name="Icon ionic-ios-close"
                   d="M23.524,21.181l7.068-7.068a1.656,1.656,0,1,0-2.342-2.342l-7.068,7.068-7.068-7.068a1.656,1.656,0,1,0-2.342,2.342l7.068,7.068-7.068,7.068a1.656,1.656,0,0,0,2.342,2.342l7.068-7.068,7.068,7.068a1.656,1.656,0,0,0,2.342-2.342Z"
                   transform="translate(-11.285 -11.289)"
-                  fill={`${closeButton[closeButtonColor]}`}
+                  fill={`${theme === "dark" ? "#fff" : "#021546"}`}
                 />
               </svg>
             </span>
