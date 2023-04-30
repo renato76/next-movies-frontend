@@ -10,9 +10,11 @@ import { FaPlay, FaEdit } from "react-icons/fa"
 import { AiOutlineHome } from "react-icons/ai"
 import { BsDot } from "react-icons/bs"
 import Reviews from "./Reviews"
+import YoutubePlayer from "@/components/YoutubePlayer"
 
 const MovieDetails = ({ movie }: MovieApiResponse) => {
   const [showMovieForm, setShowMovieForm] = useState(false)
+  const [showTrailer, setShowTrailer] = useState(false)
   const { data: session }: any = useSession()
   const cookies = parseCookies()
   const isLoggedIn = session || cookies.jwt
@@ -20,6 +22,10 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
 
   const handleEditMovie = () => {
     setShowMovieForm(true)
+  }
+
+  const handleShowTrailer = () => {
+    setShowTrailer(true)
   }
 
   const getAverageRating = () => {
@@ -31,7 +37,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
         (review) => review?.attributes?.rating
       )
       const totalRatings = allRatingsArray?.reduce((acc, curr) => acc + curr)
-      return (totalRatings!! * 20 / allRatingsArray!.length).toFixed(0)
+      return ((totalRatings!! * 20) / allRatingsArray!.length).toFixed(0)
     } else {
       return 67
     }
@@ -128,35 +134,37 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                 <div className="pl-8 md:pl-0">
                   <div className="flex justify-center items-center mr-12">
                     <div className="flex flex-col font-bold text-sm mr-2 text-white">
-                      <h4>
-                        User
-                      </h4>
-                      <h4>
-                        Score
-                      </h4>
+                      <h4>User</h4>
+                      <h4>Score</h4>
                     </div>
-                    <div className="bg-[#343434] h-[55px] w-[55px] mr-1 flex justify-center items-center border-4 border-[#1ad3ae] rounded-full">
-                      <h5 className="font-bold text-xl text-[#dbdbdb]">
+                    <div className="bg-[#343434] h-[60px] w-[60px] mr-1 flex justify-center items-center border-4 border-[#1ad3ae] rounded-full">
+                      <h5 className="font-bold text-lg text-[#dbdbdb]">
                         {getAverageRating()}
                       </h5>
-                      <span className="mb-2 text-[#d4d4d4] text-xs">%</span>
+                      <span className="mb-2 text-[#d4d4d4] text-[10px]">%</span>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-col text-white items-start pl-0 md:pl-0 hover:text-[#1ad3ae] transition duration-500">
-                  <a
+                  <div
                     className="cursor-pointer flex items-center"
-                    href={movie.data.attributes.trailer}
-                    target="_blank"
-                    rel="noreferrer"
+                    onClick={handleShowTrailer}
                   >
                     <FaPlay />
-                    <p className="flex items-center ml-2">
-                      Play Trailer
-                    </p>
-                  </a>
+                    <p className="flex items-center ml-2">Play Trailer</p>
+                  </div>
                 </div>
               </div>
+              {showTrailer && (
+                <Modal
+                  size="xl"
+                  backgroundColor="dark"
+                  closeButtonColor="light"
+                  onClose={() => setShowTrailer(false)}
+                >
+                  <YoutubePlayer embedId={movie.data.attributes.trailer} />
+                </Modal>
+              )}
               <div className="text-white flex flex-col pl-8 md:pl-0">
                 <div>
                   <h4 className="font-bold text-lg">Starring</h4>
@@ -170,6 +178,8 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
           {showMovieForm && (
             <Modal
               size="lg"
+              backgroundColor="light"
+              closeButtonColor="dark"
               onClose={() => setShowMovieForm(false)}
               title="Edit Movie"
             >

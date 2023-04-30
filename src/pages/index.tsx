@@ -36,7 +36,7 @@ const HomePage = () => {
         </div>
       ) : (
         <div className="bg-[#1a1a1a] h-[900px] md:pb-20 overflow-y-scroll">
-          <div className=" flex flex-col py-5 overflow-x-scroll">
+          <div className="flex flex-col py-5 overflow-x-scroll">
             <h2 className="text-gray-300 font-bold ml-5">ALL MOVIES</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
               {allMovies?.map((movie) => (
