@@ -30,8 +30,8 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
       <div
         className={`${
           modalSizes[size]
-        } w-full mx-5  mt-0 h-fit max-h-[90%] overflow-y-auto rounded-2xl border-light-grey bg-${
-          theme === "light" ? "[#fdfdfd]" : "[#000]"
+        } w-full mx-5  mt-0 h-fit max-h-[90%] overflow-y-auto rounded-2xl border-light-grey ${
+          theme === "light" ? "bg-[#fdfdfd]" : "bg-[#000]"
         } shadow-lg`}
       >
         <div className="mt-4 mr-4 flex justify-end">
