@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { useRouter } from "next/router"
 import { useSession } from "next-auth/react"
 import { parseCookies } from "nookies"
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar"
+import "react-circular-progressbar/dist/styles.css"
 import Image from "next/image"
 import { MovieApiResponse } from "../../fetchers/fetchMovies"
 import Modal from "../Modal"
@@ -28,7 +30,7 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
     setShowTrailer(true)
   }
 
-  const getAverageRating = () => {
+  const getAverageRating = useCallback(() => {
     if (
       movie.data.attributes.reviews &&
       movie.data.attributes.reviews.data.length > 0
@@ -41,7 +43,10 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
     } else {
       return 67
     }
-  }
+  }, [movie.data.attributes.reviews])
+  useEffect(() => {
+    getAverageRating()
+  }, [getAverageRating])
 
   return (
     <>
@@ -137,11 +142,37 @@ const MovieDetails = ({ movie }: MovieApiResponse) => {
                       <h4>User</h4>
                       <h4>Score</h4>
                     </div>
-                    <div className="bg-[#343434] h-[60px] w-[60px] mr-1 flex justify-center items-center border-4 border-[#1ad3ae] rounded-full">
-                      <h5 className="font-bold text-lg text-[#dbdbdb]">
-                        {getAverageRating()}
-                      </h5>
-                      <span className="mb-2 text-[#d4d4d4] text-[10px]">%</span>
+                    <div className="bg-[#2d3c74] rounded-full h-[75px] w-[75px] relative">
+                      <div className="h-[65px] w-[65px] font-bold absolute top-[5px] left-[5px]">
+                        <CircularProgressbar
+                          value={Number(getAverageRating())}
+                          text={`${getAverageRating()}%`}
+                          styles={buildStyles({
+                            // Rotation of path and trail, in number of turns (0-1)
+                            rotation: 0,
+
+                            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                            strokeLinecap: "butt",
+
+                            // Text size
+                            textSize: "26px",
+
+                            // How long animation takes to go from one percentage to another, in seconds
+                            pathTransitionDuration: 0.5,
+
+                            // Can specify path transition in more detail, or remove it entirely
+                            // pathTransition: 'none',
+
+                            // Colors
+                            pathColor: `rgba(26, 211, 174, 1), ${
+                              Number(getAverageRating()) / 100
+                            })`,
+                            textColor: "#fff",
+                            trailColor: "#d6d6d6",
+                            backgroundColor: "#313131",
+                          })}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
