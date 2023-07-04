@@ -36,8 +36,21 @@ const HomePage = () => {
         </div>
       ) : (
         <div className="bg-[#1a1a1a] h-[900px] md:pb-20 overflow-y-scroll">
+          <div className="h-[400px] text-white ml-5 py-5">
+            <div className="flex flex-col w-full">
+              <h2>Featured Movie</h2>
+              <div className="flex ">
+                <div className="w-1/2">
+                  Left Side
+                </div>
+                <div className="w-1/2">
+                  Right Side
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="flex flex-col py-5 overflow-x-scroll">
-            <h2 className="text-gray-300 font-bold ml-5">ALL MOVIES</h2>
+            <h2 className="text-gray-300 font-bold ml-5">All Movies</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
               {allMovies?.map((movie) => (
                 <Link
@@ -59,7 +72,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="flex flex-col py-5">
-            <h2 className="text-gray-300 font-bold ml-5">ACTION MOVIES</h2>
+            <h2 className="text-gray-300 font-bold ml-5">Action Movies</h2>
             <div className="flex cursor-pointer overflow-x-scroll scrollbar-hide overflow-y-hidden px-3">
               {actionMovies?.map((movie) => (
                 <Link
