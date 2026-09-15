@@ -1,6 +1,10 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["www.themoviedb.org", "lh3.googleusercontent.com"],
+    domains: [
+      "www.themoviedb.org",
+      "image.tmdb.org",
+      "lh3.googleusercontent.com",
+    ],
   },
 }
